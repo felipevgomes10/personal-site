@@ -1,5 +1,9 @@
-export const primary = {
+export const theme = {
   colors: {
-    primary: '#0070f3'
+    primary: '#10608C',
+    secondary: '#FBFBF8',
+    background: '#EEEEEE',
+    font: '#333333',
+    fontOnPrimary: '#FFFFFF'
   }
 }

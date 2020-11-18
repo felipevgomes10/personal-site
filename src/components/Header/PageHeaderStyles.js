@@ -28,7 +28,9 @@ export const Header = styled.header`
 
   & .avatar {
     height: 5rem;
+    width: 5rem;
     border-radius: 50%;
+    overflow: hidden;
     margin-left: 2rem;
   }
 `

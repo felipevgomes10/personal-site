@@ -3,6 +3,7 @@ import { Header } from './PageHeaderStyles'
 import Logo from '../../../public/logo.svg'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
+import Image from '../Helpers/Image/Image'
 
 const PageHeader = ({ userData }) => {
   return (
@@ -14,10 +15,10 @@ const PageHeader = ({ userData }) => {
       </Link>
       <div className="headerAdm">
         <p>Administrador</p>
-        <img
+        <Image
           className="avatar"
-          src={userData && userData.avatar_url}
           alt={userData && userData.name}
+          src={userData && userData.avatar_url}
         />
       </div>
     </Header>

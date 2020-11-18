@@ -5,8 +5,9 @@ import { ThemeProvider } from 'styled-components'
 import { GlobalStyle } from '../styles/GlobalStyles'
 import { theme } from '../themes/primary'
 import PageHeader from '../components/Header/PageHeader'
+import NavBar from '../components/NavBar/NavBar'
 
-export default function App({ Component, pageProps }) {
+const App = ({ Component, pageProps }) => {
   const { data } = useSWR(
     'https://api.github.com/users/felipevgomes10',
     async () => {
@@ -23,11 +24,14 @@ export default function App({ Component, pageProps }) {
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         <PageHeader userData={data} />
+        <NavBar />
         <Component {...pageProps} userData={data} />
       </ThemeProvider>
     </>
   )
 }
+
+export default App
 
 App.propTypes = {
   Component: PropTypes.elementType.isRequired,

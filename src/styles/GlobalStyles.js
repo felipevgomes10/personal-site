@@ -17,7 +17,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Nunito', sans-serif;
     font-size: 1.6rem;
     font-weight: 400;
-    min-height: calc(100vh + 5px);
+    min-height: 100vh;
     background: #EEEEEE;
   }
 

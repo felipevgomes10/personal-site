@@ -15,7 +15,11 @@ export const Nav = styled.nav`
 
   & .NavBarWrapper {
     ${flex};
-    width: 50%;
+    width: 40%;
+
+    @media (max-width: 48em) {
+      width: 50%;
+    }
   }
 
   & .NavBarWrapper a {

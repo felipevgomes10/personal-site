@@ -6,6 +6,7 @@ import { GlobalStyle } from '../styles/GlobalStyles'
 import { theme } from '../themes/primary'
 import PageHeader from '../components/Header/PageHeader'
 import NavBar from '../components/NavBar/NavBar'
+import PageFooter from '../components/Footer/PageFooter'
 
 const App = ({ Component, pageProps }) => {
   const { data } = useSWR(
@@ -26,6 +27,7 @@ const App = ({ Component, pageProps }) => {
         <PageHeader userData={data} />
         <NavBar />
         <Component {...pageProps} userData={data} />
+        <PageFooter />
       </ThemeProvider>
     </>
   )

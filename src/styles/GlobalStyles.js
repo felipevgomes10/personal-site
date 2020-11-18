@@ -18,6 +18,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1.6rem;
     font-weight: 400;
     min-height: calc(100vh + 5px);
+    background: #EEEEEE;
   }
 
   img {

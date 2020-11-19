@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 
 export const Layout = styled.section`
   min-height: calc(100vh - 8.8rem - 6.8rem - 5.5rem);
+  margin: ${({ margin }) => margin};
 
   ${props =>
     props.flex &&
@@ -24,5 +25,20 @@ export const Layout = styled.section`
       align-content: ${({ alignC }) => alignC};
       row-gap: ${({ rowGap }) => rowGap};
       column-gap: ${({ columnGap }) => columnGap};
+    `}
+
+    ${props =>
+    props.gridItem &&
+    css`
+      grid-column: ${({ column }) => column};
+      grid-row: ${({ row }) => row};
+      justify-self: ${({ justifySelf }) => justifySelf};
+      align-self: ${({ alignSelf }) => alignSelf};
+    `}
+
+    ${props =>
+    props.flexItem &&
+    css`
+      align-self: ${({ alignSelf }) => alignSelf};
     `}
 `

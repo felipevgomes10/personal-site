@@ -33,7 +33,7 @@ const Adm = ({ setLogin }) => {
   const handleSubmit = useCallback(
     async e => {
       e.preventDefault()
-      if (user.validate() && password.validate) {
+      if (user.validate() && password.validate()) {
         const { response, json } = await request(url, options)
         if (response.ok) {
           window.localStorage.setItem('userToken', json.token)

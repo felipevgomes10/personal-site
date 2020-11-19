@@ -10,6 +10,8 @@ const animate = keyframes`
 `
 export const SkeletonWrapper = styled.div`
   display: grid;
+  height: 100%;
+  width: 100%;
 `
 
 export const Skeleton = styled.div`
@@ -28,6 +30,9 @@ export const Skeleton = styled.div`
 
 export const Img = styled.img`
   grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   opacity: 0;
   transition: 0.3s;
 

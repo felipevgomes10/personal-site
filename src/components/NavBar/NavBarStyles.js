@@ -12,6 +12,9 @@ export const Nav = styled.nav`
   background: ${props => props.theme.colors.secondary};
   height: 5.5rem;
   width: 100%;
+  border-top: 0.5px solid;
+  border-bottom: 0.5px solid;
+  border-color: ${props => props.theme.colors.border};
 
   & .NavBarWrapper {
     ${flex};
@@ -23,6 +26,13 @@ export const Nav = styled.nav`
   }
 
   & .NavBarWrapper a {
+    font-weight: 700;
     font-size: 1.9rem;
+    transition: 0.2s;
+
+    &:hover,
+    &.active {
+      color: ${props => props.theme.colors.primary};
+    }
   }
 `

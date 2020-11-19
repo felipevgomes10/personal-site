@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1.6rem;
     font-weight: 400;
     min-height: 100vh;
-    background: #EEEEEE;
+    background: #FFFFFF;
   }
 
   img {
@@ -35,5 +35,11 @@ export const GlobalStyle = createGlobalStyle`
   a:visited {
     text-decoration: none;
     color: #333;
+  }
+
+  button,
+  input,
+  textarea {
+    font-family: 'Nunito', sans-serif;
   }
 `

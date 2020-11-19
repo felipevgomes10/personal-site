@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layout } from '../styles/Layout'
+import { Layout } from '../components/Helpers/Layout'
 
 const Home = () => {
   return <Layout />

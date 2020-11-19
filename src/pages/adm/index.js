@@ -12,11 +12,13 @@ import { TOKEN_POST } from '../../endpoints'
 import ErrorText from '../../components/Helpers/Error/Error'
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
+import useMedia from '../../hooks/useMedia'
 
 const Adm = ({ setLogin }) => {
   const user = useForm()
   const password = useForm()
   const router = useRouter()
+  const width = useMedia('(max-width: 50em)')
 
   useEffect(() => {
     router.prefetch('/adm/add-project')
@@ -42,10 +44,14 @@ const Adm = ({ setLogin }) => {
     },
     [user, password, options, request, url, setLogin, router]
   )
-  console.log(data)
   return (
-    <Layout grid columns="1fr 1fr" justify="center" align="center">
-      <Image alt="form-adm-image" src={formAdm} />
+    <Layout
+      grid
+      columns={width ? '1fr' : '1fr 1fr'}
+      justify="center"
+      align="center"
+    >
+      {!width && <Image alt="form-adm-image" src={formAdm} />}
       <Layout flex justify="center" align="center">
         <PageForm handleSubmit={handleSubmit}>
           <Title text="Login do Administrador" />

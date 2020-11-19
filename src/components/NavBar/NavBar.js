@@ -2,8 +2,9 @@ import React, { useEffect, useRef } from 'react'
 import { Nav } from './NavBarStyles'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import PropTypes from 'prop-types'
 
-const NavBar = () => {
+const NavBar = ({ login }) => {
   const { pathname } = useRouter()
   const NavBarRef = useRef(null)
 
@@ -23,18 +24,27 @@ const NavBar = () => {
         <Link href="/">
           <a>Início</a>
         </Link>
-        <Link href="#">
+        <Link href="/projects">
           <a>Projetos</a>
         </Link>
-        <Link href="#">
+        <Link href="/about">
           <a>Sobre</a>
         </Link>
-        <Link href="#">
+        <Link href="/contact">
           <a>Contato</a>
         </Link>
+        {login && (
+          <Link href="/adm/add-project">
+            <a>Incluir Projeto</a>
+          </Link>
+        )}
       </div>
     </Nav>
   )
 }
 
 export default NavBar
+
+NavBar.propTypes = {
+  login: PropTypes.bool
+}

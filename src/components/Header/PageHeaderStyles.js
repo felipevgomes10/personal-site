@@ -22,8 +22,29 @@ export const Header = styled.header`
     ${flex};
   }
 
-  & p {
+  & a,
+  & p,
+  & button {
     font-size: 1.8rem;
+    transition: 0.3s;
+  }
+
+  & button {
+    border: none;
+    outline: none;
+    background: none;
+    margin-left: 5px;
+    color: ${props => props.theme.colors.font};
+    cursor: pointer;
+
+    &:hover {
+      color: ${props => props.theme.colors.primary};
+    }
+  }
+
+  & a.active,
+  & a:hover {
+    color: ${props => props.theme.colors.primary};
   }
 
   & .avatar {

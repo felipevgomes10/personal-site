@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import useSWR from 'swr'
 import { ThemeProvider } from 'styled-components'
@@ -7,8 +7,12 @@ import { theme } from '../themes/primary'
 import PageHeader from '../components/Header/PageHeader'
 import NavBar from '../components/NavBar/NavBar'
 import PageFooter from '../components/Footer/PageFooter'
+import useFetch from '../hooks/useFetch'
+import { TOKEN_VALIDATE } from '../endpoints'
 
 const App = ({ Component, pageProps }) => {
+  const [login, setLogin] = useState(false)
+  const { request } = useFetch()
   const { data } = useSWR(
     'https://api.github.com/users/felipevgomes10',
     async () => {
@@ -20,13 +24,28 @@ const App = ({ Component, pageProps }) => {
     }
   )
 
+  useEffect(() => {
+    const autoLogin = async () => {
+      const userToken = window.localStorage.getItem('userToken')
+      const { url, options } = TOKEN_VALIDATE(userToken)
+      const { response } = await request(url, options)
+      if (response.ok) setLogin(true)
+    }
+    autoLogin()
+  }, [request])
+
   return (
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-        <PageHeader userData={data} />
+        <PageHeader userData={data} login={login} setLogin={setLogin} />
         <NavBar />
-        <Component {...pageProps} userData={data} />
+        <Component
+          {...pageProps}
+          userData={data}
+          login={login}
+          setLogin={setLogin}
+        />
         <PageFooter />
       </ThemeProvider>
     </>

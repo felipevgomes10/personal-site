@@ -1,28 +1,35 @@
-import React, { useContext } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Nav } from './NavBarStyles'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { ThemeContext } from 'styled-components'
 
 const NavBar = () => {
   const { pathname } = useRouter()
-  const { colors } = useContext(ThemeContext)
+  const NavBarRef = useRef(null)
+
+  useEffect(() => {
+    const links = [...NavBarRef.current.children]
+
+    links.forEach(link => {
+      const attribute = link.getAttribute('href')
+      if (attribute === pathname) link.classList.add('active')
+      else link.classList.remove('active')
+    })
+  }, [pathname])
 
   return (
     <Nav>
-      <div className="NavBarWrapper">
+      <div className="NavBarWrapper" ref={NavBarRef}>
         <Link href="/">
-          <a style={pathname === '/' ? { color: colors.primary } : ''}>
-            Início
-          </a>
+          <a>Início</a>
         </Link>
-        <Link href="/">
+        <Link href="#">
           <a>Projetos</a>
         </Link>
-        <Link href="/">
+        <Link href="#">
           <a>Sobre</a>
         </Link>
-        <Link href="/">
+        <Link href="#">
           <a>Contato</a>
         </Link>
       </div>

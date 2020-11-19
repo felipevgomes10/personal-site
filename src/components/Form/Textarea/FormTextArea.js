@@ -1,26 +1,26 @@
 import React from 'react'
-import { Input, Label } from './FormInputStyles'
-import PropTypes from 'prop-types'
 import ErrorText from '../../Helpers/Error/Error'
+import { Label } from '../Input/FormInputStyles'
+import { TextArea } from './FormTextAreaStyles'
+import PropTypes from 'prop-types'
 
-const FormInput = ({ label, margin, type, error, id, ...props }) => {
+const FormTextArea = ({ label, margin, error, id, ...props }) => {
   return (
     <>
       <Label htmlFor={id} margin={margin}>
         {label}
       </Label>
-      <Input id={id} name={id} type={type} {...props} />
+      <TextArea id={id} name={id} {...props} />
       {error && <ErrorText>{error}</ErrorText>}
     </>
   )
 }
 
-export default FormInput
+export default FormTextArea
 
-FormInput.propTypes = {
+FormTextArea.propTypes = {
   label: PropTypes.string.isRequired,
   margin: PropTypes.string,
-  type: PropTypes.string.isRequired,
   error: PropTypes.string,
   id: PropTypes.string.isRequired
 }

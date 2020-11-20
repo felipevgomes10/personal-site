@@ -8,6 +8,7 @@ export const Input = styled.input`
   ${props =>
     props.other &&
     css`
+      display: ${({ display }) => display};
       background: initial;
       border: initial;
       width: initial;
@@ -22,4 +23,10 @@ export const Input = styled.input`
 
 export const Label = styled.label`
   ${label}
+
+  ${props =>
+    props.labelInline &&
+    css`
+      display: inline-block;
+    `}
 `

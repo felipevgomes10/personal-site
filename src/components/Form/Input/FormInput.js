@@ -3,13 +3,22 @@ import { Input, Label } from './FormInputStyles'
 import PropTypes from 'prop-types'
 import ErrorText from '../../Helpers/Error/Error'
 
-const FormInput = ({ label, margin, type, error, id, ...props }) => {
+const FormInput = ({
+  label,
+  margin,
+  type,
+  error,
+  id,
+  labelInline,
+  other,
+  ...props
+}) => {
   return (
     <>
-      <Label htmlFor={id} margin={margin}>
+      <Label htmlFor={id} margin={margin} labelInline={labelInline}>
         {label}
       </Label>
-      <Input id={id} name={id} type={type} {...props} />
+      <Input id={id} name={id} type={type} other={other} {...props} />
       {error && <ErrorText>{error}</ErrorText>}
     </>
   )
@@ -22,5 +31,7 @@ FormInput.propTypes = {
   margin: PropTypes.string,
   type: PropTypes.string.isRequired,
   error: PropTypes.string,
-  id: PropTypes.string.isRequired
+  id: PropTypes.string.isRequired,
+  labelInline: PropTypes.bool,
+  other: PropTypes.bool
 }

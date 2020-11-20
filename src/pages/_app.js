@@ -8,9 +8,10 @@ import PageHeader from '../components/Header/PageHeader'
 import NavBar from '../components/NavBar/NavBar'
 import PageFooter from '../components/Footer/PageFooter'
 import useFetch from '../hooks/useFetch'
-import { TOKEN_VALIDATE } from '../endpoints'
+import { TOKEN_VALIDATE, USER_GET } from '../endpoints'
 
 const App = ({ Component, pageProps }) => {
+  const [user, setUser] = useState(null)
   const [login, setLogin] = useState(false)
   const { request } = useFetch()
   const { data } = useSWR(
@@ -29,7 +30,12 @@ const App = ({ Component, pageProps }) => {
       const userToken = window.localStorage.getItem('userToken')
       const { url, options } = TOKEN_VALIDATE(userToken)
       const { response } = await request(url, options)
-      if (response.ok) setLogin(true)
+      if (response.ok) {
+        setLogin(true)
+        const { url, options } = USER_GET(userToken)
+        const { json } = await request(url, options)
+        setUser(json)
+      }
     }
     autoLogin()
   }, [request])
@@ -45,6 +51,8 @@ const App = ({ Component, pageProps }) => {
           userData={data}
           login={login}
           setLogin={setLogin}
+          user={user}
+          setUser={setUser}
         />
         <PageFooter />
       </ThemeProvider>

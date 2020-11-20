@@ -42,4 +42,9 @@ export const GlobalStyle = createGlobalStyle`
   textarea {
     font-family: 'Nunito', sans-serif;
   }
+
+  .loading {
+    margin: 2rem;
+    color: #333;
+  }
 `

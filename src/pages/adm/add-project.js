@@ -133,7 +133,8 @@ const AddProject = ({ login }) => {
             error={technologies.error}
           />
           <FormInput
-            other
+            other={true}
+            display="block"
             id="formFile"
             margin="2.6rem 0 1rem"
             label="Imagem do Projeto"
@@ -141,9 +142,10 @@ const AddProject = ({ login }) => {
             onChange={handleImage}
           />
           <FormInput
-            other
+            other={true}
+            labelInline={true}
             id="formCheckbox"
-            margin="2.6rem 0 1rem"
+            margin="2.6rem 1.5rem 1rem 0"
             label="Destaque"
             type="checkbox"
             value="featured"

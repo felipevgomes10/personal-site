@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components'
 export const Layout = styled.section`
   min-height: calc(100vh - 8.8rem - 6.8rem - 5.5rem);
   margin: ${({ margin }) => margin};
+  padding: ${({ padding }) => padding};
 
   ${props =>
     props.flex &&

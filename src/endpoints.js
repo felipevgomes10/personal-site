@@ -42,3 +42,25 @@ export const PROJECT_POST = (formData, token) => {
     }
   }
 }
+
+export const PROJECTS_GET = (page, total, user) => {
+  return {
+    url: `${baseUrl}/api/project/?page=${page}&total=${total}&user=${user}`,
+    options: {
+      method: 'GET',
+      cache: 'no-store'
+    }
+  }
+}
+
+export const USER_GET = token => {
+  return {
+    url: `${baseUrl}/api/user`,
+    options: {
+      method: 'GET',
+      headers: {
+        Authorization: 'Bearer ' + token
+      }
+    }
+  }
+}

@@ -8,13 +8,13 @@ import FormInput from '../../components/Form/Input/FormInput'
 import Button from '../../components/Helpers/Button/Button'
 import useForm from '../../hooks/useForm'
 import useFetch from '../../hooks/useFetch'
-import { TOKEN_POST } from '../../endpoints'
+import { TOKEN_POST, USER_GET } from '../../endpoints'
 import ErrorText from '../../components/Helpers/Error/Error'
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
 import useMedia from '../../hooks/useMedia'
 
-const Adm = ({ setLogin }) => {
+const Adm = ({ setLogin, setUser }) => {
   const user = useForm()
   const password = useForm()
   const router = useRouter()
@@ -38,11 +38,14 @@ const Adm = ({ setLogin }) => {
         if (response.ok) {
           window.localStorage.setItem('userToken', json.token)
           setLogin(true)
+          const { url, options } = USER_GET(json.token)
+          const data = await request(url, options)
+          setUser(data.json)
           router.push('/adm/add-project')
         }
       }
     },
-    [user, password, options, request, url, setLogin, router]
+    [user, password, options, request, url, setLogin, router, setUser]
   )
   return (
     <Layout
@@ -56,6 +59,7 @@ const Adm = ({ setLogin }) => {
         <PageForm handleSubmit={handleSubmit}>
           <Title text="Login do Administrador" />
           <FormInput
+            id="userForm"
             margin="2.6rem 0 1rem"
             label="Usuário"
             type="text"
@@ -66,6 +70,7 @@ const Adm = ({ setLogin }) => {
             error={user.error}
           />
           <FormInput
+            id="passwordForm"
             margin="2.6rem 0 1rem"
             label="Senha"
             type="password"

@@ -11,7 +11,7 @@ const Projects = ({ projectsData, user }) => {
   const newPages = []
 
   for (let i = 2; i < pages; i++) {
-    newPages.push(<Page index={i} key={i} user={user.username} />)
+    newPages.push(<Page index={i} key={i} user={user.username || 0} />)
   }
 
   return (

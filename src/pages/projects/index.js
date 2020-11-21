@@ -9,9 +9,10 @@ import NoResult from '../../components/Helpers/NoResult/NoResult'
 const Projects = ({ projectsData, user }) => {
   const [pages, setPages] = useState(2)
   const newPages = []
+  const userName = !user ? 0 : user.username
 
   for (let i = 2; i < pages; i++) {
-    newPages.push(<Page index={i} key={i} user={user.username || 0} />)
+    newPages.push(<Page index={i} key={i} user={userName} />)
   }
 
   return (

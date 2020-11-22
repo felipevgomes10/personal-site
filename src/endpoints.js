@@ -53,6 +53,16 @@ export const PROJECTS_GET = (page, total, user) => {
   }
 }
 
+export const PROJECT_GET = id => {
+  return {
+    url: `${baseUrl}/api/project/${id}`,
+    options: {
+      method: 'GET',
+      cache: 'no-store'
+    }
+  }
+}
+
 export const USER_GET = token => {
   return {
     url: `${baseUrl}/api/user`,

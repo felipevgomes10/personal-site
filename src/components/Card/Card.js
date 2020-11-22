@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useCallback, useEffect } from 'react'
 import { CardButton, CardText, CardTitle, CardWrapper } from './CardStyles'
 import Arrow from '../../../public/arrow.svg'
 import PropTypes from 'prop-types'
+import { useRouter } from 'next/router'
 
-const Card = ({ projectName, projectDescription, cardClick }) => {
+const Card = ({ projectName, projectDescription, id }) => {
+  const router = useRouter()
+
+  useEffect(() => {
+    router.prefetch(`/projects/${id}`)
+  }, [id, router])
+
+  const cardClick = useCallback(() => {
+    router.push(`/projects/${id}`)
+  }, [id, router])
+
   return (
     <CardWrapper>
       <CardTitle>{projectName}</CardTitle>
@@ -22,5 +33,5 @@ export default Card
 Card.propTypes = {
   projectName: PropTypes.string,
   projectDescription: PropTypes.string,
-  cardClick: PropTypes.func
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 }

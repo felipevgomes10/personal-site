@@ -12,6 +12,7 @@ export const Layout = styled.section`
       justify-content: ${({ justify }) => justify};
       align-items: ${({ align }) => align};
       flex-direction: ${({ direction }) => direction};
+      flex-wrap: ${({ wrap }) => wrap};
     `}
 
   ${props =>
@@ -41,5 +42,13 @@ export const Layout = styled.section`
     props.flexItem &&
     css`
       align-self: ${({ alignSelf }) => alignSelf};
+      flex: ${({ flexOptions }) => flexOptions};
+    `}
+
+    ${props =>
+    props.resetHeight &&
+    css`
+      min-height: initial;
+      height: ${({ height }) => height};
     `}
 `

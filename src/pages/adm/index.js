@@ -97,5 +97,6 @@ const Adm = ({ setLogin, setUser }) => {
 export default Adm
 
 Adm.propTypes = {
-  setLogin: PropTypes.func
+  setLogin: PropTypes.func,
+  setUser: PropTypes.func
 }

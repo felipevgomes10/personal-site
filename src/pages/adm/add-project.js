@@ -13,6 +13,7 @@ import Button from '../../components/Helpers/Button/Button'
 import useFetch from '../../hooks/useFetch'
 import { GET_LOCAL_TOKEN, PROJECT_POST } from '../../endpoints'
 import ErrorText from '../../components/Helpers/Error/Error'
+import useMedia from '../../hooks/useMedia'
 
 const AddProject = ({ login }) => {
   const router = useRouter()
@@ -24,6 +25,7 @@ const AddProject = ({ login }) => {
   const [featured, setFeatured] = useState(false)
   const { loading, request } = useFetch()
   const [error, setError] = useState(null)
+  const width = useMedia('(max-width: 50em)')
 
   useEffect(() => {
     if (!login) router.push('/')
@@ -77,7 +79,12 @@ const AddProject = ({ login }) => {
   )
 
   return (
-    <Layout grid columns="1fr 1fr" justify="center" align="center">
+    <Layout
+      grid
+      columns={width ? '1fr' : '1fr 1fr'}
+      justify="center"
+      align="center"
+    >
       <Image alt="formulário dos projetos" src={formProjects} />
       <Layout
         flex

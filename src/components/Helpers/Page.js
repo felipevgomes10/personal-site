@@ -19,6 +19,7 @@ function Page({ index, user }) {
       key={item.id}
       projectName={item.title}
       projectDescription={item.content}
+      id={item.id}
     />
   ))
 }
@@ -27,5 +28,5 @@ export default Page
 
 Page.propTypes = {
   index: PropTypes.number,
-  user: PropTypes.string
+  user: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 }

@@ -4,7 +4,7 @@ import { Layout } from '../../components/Helpers/Layout'
 import { PROJECTS_GET } from '../../endpoints'
 import PropTypes from 'prop-types'
 import Page from '../../components/Helpers/Page'
-import NoResult from '../../components/Helpers/NoResult/NoResult'
+import LoadMore from '../../components/Helpers/LoadMore/LoadMore'
 
 const Projects = ({ projectsData, user }) => {
   const [pages, setPages] = useState(2)
@@ -24,16 +24,21 @@ const Projects = ({ projectsData, user }) => {
       padding="2.5rem"
     >
       {projectsData.map(({ title, content, id }) => (
-        <Card key={id} projectName={title} projectDescription={content} />
+        <Card
+          key={id}
+          projectName={title}
+          projectDescription={content}
+          id={id}
+        />
       ))}
       {newPages}
-      <NoResult onClick={() => setPages(pages + 1)}>Carregar mais</NoResult>
+      <LoadMore onClick={() => setPages(pages + 1)}>Carregar mais</LoadMore>
     </Layout>
   )
 }
 
 export const getStaticProps = async () => {
-  const { url, options } = PROJECTS_GET(1, 3, 'felipevgomes10')
+  const { url, options } = PROJECTS_GET(1, 3, 0)
   const response = await fetch(url, options)
   const projectsData = await response.json()
 
@@ -41,7 +46,7 @@ export const getStaticProps = async () => {
     props: {
       projectsData
     },
-    revalidate: 86400
+    revalidate: 60
   }
 }
 

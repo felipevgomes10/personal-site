@@ -49,8 +49,8 @@ export const CardText = styled.div`
 
   &::before {
     width: 40px;
-    height: 4px;
-    border-radius: 2px;
+    height: 2px;
+    border-radius: 10px;
     margin: 0 auto;
     background: ${props => props.theme.colors.font};
     margin-top: -8px;
@@ -78,5 +78,11 @@ export const CardButton = styled(Btn)`
 
   & svg {
     margin-left: 5px;
+    fill: currentColor;
+
+    & > * {
+      fill: currentColor;
+      stroke-width: 1.7px;
+    }
   }
 `

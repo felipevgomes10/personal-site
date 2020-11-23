@@ -48,7 +48,6 @@ const App = ({ Component, pageProps }) => {
         <NavBar login={login} />
         <Component
           {...pageProps}
-          userData={data}
           login={login}
           setLogin={setLogin}
           user={user}

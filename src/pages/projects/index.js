@@ -5,6 +5,7 @@ import { PROJECTS_GET } from '../../endpoints'
 import PropTypes from 'prop-types'
 import Page from '../../components/Helpers/Page'
 import LoadMore from '../../components/Helpers/LoadMore/LoadMore'
+import PageHead from '../../components/Helpers/Head'
 
 const Projects = ({ projectsData, user }) => {
   const [pages, setPages] = useState(2)
@@ -16,24 +17,28 @@ const Projects = ({ projectsData, user }) => {
   }
 
   return (
-    <Layout
-      flex
-      justify="center"
-      align="center"
-      direction="column"
-      padding="2.5rem"
-    >
-      {projectsData.map(({ title, content, id }) => (
-        <Card
-          key={id}
-          projectName={title}
-          projectDescription={content}
-          id={id}
-        />
-      ))}
-      {newPages}
-      <LoadMore onClick={() => setPages(pages + 1)}>Carregar mais</LoadMore>
-    </Layout>
+    <>
+      <PageHead title="Projetos | Web Dev Felipe" />
+      <Layout
+        flex
+        justify="center"
+        align="center"
+        direction="column"
+        padding="2.5rem"
+        fromTop
+      >
+        {projectsData.map(({ title, content, id }) => (
+          <Card
+            key={id}
+            projectName={title}
+            projectDescription={content}
+            id={id}
+          />
+        ))}
+        {newPages}
+        <LoadMore onClick={() => setPages(pages + 1)}>Carregar mais</LoadMore>
+      </Layout>
+    </>
   )
 }
 

@@ -10,6 +10,7 @@ import Tag from '../../components/Tag/Tag'
 import Iframe from '../../components/Iframe/Iframe'
 import useMedia from '../../hooks/useMedia'
 import Loader from '../../components/Helpers/Loader/Loader'
+import PageHead from '../../components/Helpers/Head'
 
 const Project = ({ data }) => {
   const router = useRouter()
@@ -27,47 +28,54 @@ const Project = ({ data }) => {
 
   if (router.isFallback) {
     return (
-      <Layout flex justify="center" align="center">
-        <Loader />
-      </Layout>
+      <>
+        <PageHead title="Carregando... | Web Dev Felipe" />
+        <Layout flex justify="center" align="center">
+          <Loader />
+        </Layout>
+      </>
     )
   }
   return (
-    <Layout
-      grid
-      columns={width ? '1fr' : '1fr 1fr'}
-      justify="center"
-      align="center"
-    >
-      <Image alt={data.title} src={data.src} />
+    <>
+      <PageHead title={`${data.title} | Web Dev Felipe`} />
       <Layout
-        flex
-        justify="flex-start"
+        grid
+        columns={width ? '1fr' : '1fr 1fr'}
+        justify="center"
         align="center"
-        direction="column"
-        padding="5.2rem"
       >
-        <Title text={data.title} />
-        <Description>{data.content}</Description>
+        <Image alt={data.title} src={data.src} />
         <Layout
           flex
-          flexItem
           justify="flex-start"
           align="center"
-          wrap="wrap"
-          alignSelf="flex-start"
-          margin=" 0 5.2rem 5.2rem"
-          resetHeight
+          direction="column"
+          padding="5.2rem"
+          fromLeft
         >
-          <p>Tecnologias utilizadas:</p>
-          {technologies &&
-            technologies.map(technology => (
-              <Tag key={technology}>{technology}</Tag>
-            ))}
+          <Title text={data.title} />
+          <Description>{data.content}</Description>
+          <Layout
+            flex
+            flexItem
+            justify="flex-start"
+            align="center"
+            wrap="wrap"
+            alignSelf="flex-start"
+            margin=" 0 5.2rem 5.2rem"
+            resetHeight
+          >
+            <p>Tecnologias utilizadas:</p>
+            {technologies &&
+              technologies.map(technology => (
+                <Tag key={technology}>{technology}</Tag>
+              ))}
+          </Layout>
+          <Iframe src={data.video} />
         </Layout>
-        <Iframe src={data.video} />
       </Layout>
-    </Layout>
+    </>
   )
 }
 

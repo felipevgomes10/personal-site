@@ -1,9 +1,45 @@
-import styled, { css } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
+
+const fromLeft = keyframes`
+from {
+  transform: translateX(-30px);
+  opacity: 0;
+}
+to {
+  transform: initial;
+  opacity: 1;
+}
+`
+
+const fromTop = keyframes`
+from {
+  transform: translateY(-30px);
+  opacity: 0;
+}
+to {
+  transform: initial;
+  opacity: 1;
+}
+`
 
 export const Layout = styled.section`
   min-height: calc(100vh - 8.8rem - 6.8rem - 5.5rem);
   margin: ${({ margin }) => margin};
   padding: ${({ padding }) => padding};
+
+  ${props =>
+    props.fromLeft &&
+    css`
+      opacity: 0;
+      animation: 0.5s ${fromLeft} forwards;
+    `}
+
+  ${props =>
+    props.fromTop &&
+    css`
+      opacity: 0;
+      animation: 0.5s ${fromTop} forwards;
+    `}
 
   ${props =>
     props.flex &&

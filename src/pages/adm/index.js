@@ -13,6 +13,7 @@ import ErrorText from '../../components/Helpers/Error/Error'
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
 import useMedia from '../../hooks/useMedia'
+import PageHead from '../../components/Helpers/Head'
 
 const Adm = ({ setLogin, setUser }) => {
   const user = useForm()
@@ -48,49 +49,54 @@ const Adm = ({ setLogin, setUser }) => {
     [user, password, options, request, url, setLogin, router, setUser]
   )
   return (
-    <Layout
-      grid
-      columns={width ? '1fr' : '1fr 1fr'}
-      justify="center"
-      align="center"
-    >
-      {!width && <Image alt="form-adm-image" src={formAdm} />}
-      <Layout flex justify="center" align="center">
-        <PageForm handleSubmit={handleSubmit}>
-          <Title text="Login do Administrador" />
-          <FormInput
-            id="userForm"
-            margin="2.6rem 0 1rem"
-            label="Usuário"
-            type="text"
-            placeholder="Digite aqui..."
-            value={user.value}
-            onChange={user.onChange}
-            onBlur={user.onBlur}
-            error={user.error}
-          />
-          <FormInput
-            id="passwordForm"
-            margin="2.6rem 0 1rem"
-            label="Senha"
-            type="password"
-            placeholder="Senha aqui..."
-            value={password.value}
-            onChange={password.onChange}
-            onBlur={password.onBlur}
-            error={password.error}
-          />
-          {data === undefined && <ErrorText>Usuário não encontrado</ErrorText>}
-          {loading ? (
-            <Button margin="2.6rem 0 0" disabled>
-              Entrando...
-            </Button>
-          ) : (
-            <Button margin="2.6rem 0 0">Entrar</Button>
-          )}
-        </PageForm>
+    <>
+      <PageHead title="Administrador | Web Dev Felipe" />
+      <Layout
+        grid
+        columns={width ? '1fr' : '1fr 1fr'}
+        justify="center"
+        align="center"
+      >
+        {!width && <Image alt="form-adm-image" src={formAdm} />}
+        <Layout flex justify="center" align="center" fromTop>
+          <PageForm handleSubmit={handleSubmit}>
+            <Title text="Login do Administrador" />
+            <FormInput
+              id="userForm"
+              margin="2.6rem 0 1rem"
+              label="Usuário"
+              type="text"
+              placeholder="Digite aqui..."
+              value={user.value}
+              onChange={user.onChange}
+              onBlur={user.onBlur}
+              error={user.error}
+            />
+            <FormInput
+              id="passwordForm"
+              margin="2.6rem 0 1rem"
+              label="Senha"
+              type="password"
+              placeholder="Senha aqui..."
+              value={password.value}
+              onChange={password.onChange}
+              onBlur={password.onBlur}
+              error={password.error}
+            />
+            {data === undefined && (
+              <ErrorText>Usuário não encontrado</ErrorText>
+            )}
+            {loading ? (
+              <Button margin="2.6rem 0 0" disabled>
+                Entrando...
+              </Button>
+            ) : (
+              <Button margin="2.6rem 0 0">Entrar</Button>
+            )}
+          </PageForm>
+        </Layout>
       </Layout>
-    </Layout>
+    </>
   )
 }
 

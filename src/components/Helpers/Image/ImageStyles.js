@@ -10,8 +10,11 @@ const animate = keyframes`
 `
 export const SkeletonWrapper = styled.div`
   display: grid;
-  height: 100%;
-  width: 100%;
+  height: ${({ height }) => height || '100%'};
+  width: ${({ width }) => width || '100%'};
+  border-radius: ${({ radius }) => radius};
+  margin: ${({ margin }) => margin};
+  overflow: ${({ overflowHidden }) => overflowHidden && 'hidden'};
 `
 
 export const Skeleton = styled.div`

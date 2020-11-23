@@ -1,29 +1,21 @@
-import React, { useCallback, useEffect } from 'react'
-import { CardButton, CardText, CardTitle, CardWrapper } from './CardStyles'
+import React from 'react'
+import { CardText, CardTitle, CardWrapper } from './CardStyles'
 import Arrow from '../../../public/arrow.svg'
 import PropTypes from 'prop-types'
-import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 const Card = ({ projectName, projectDescription, id }) => {
-  const router = useRouter()
-
-  useEffect(() => {
-    router.prefetch(`/projects/${id}`)
-  }, [id, router])
-
-  const cardClick = useCallback(() => {
-    router.push(`/projects/${id}`)
-  }, [id, router])
-
   return (
     <CardWrapper>
       <CardTitle>{projectName}</CardTitle>
       <CardText>
         <p>{projectDescription}</p>
       </CardText>
-      <CardButton onClick={cardClick}>
-        Detalhes <Arrow />
-      </CardButton>
+      <Link href={{ pathname: '/projects/[id]', query: { id } }}>
+        <a>
+          Detalhes <Arrow />
+        </a>
+      </Link>
     </CardWrapper>
   )
 }

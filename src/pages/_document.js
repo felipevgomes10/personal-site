@@ -38,6 +38,7 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap"
             rel="stylesheet"
           />
+          <link rel="shortcut icon" href="/logo.svg" />
         </Head>
         <body>
           <Main />

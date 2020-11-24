@@ -3,7 +3,6 @@ import { PROJECTS_GET, PROJECT_GET } from '../../endpoints'
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
 import { Layout } from '../../components/Helpers/Layout'
-import Image from '../../components/Helpers/Image/Image'
 import Title from '../../components/Helpers/Title/Title'
 import { Description } from '../../styles/pages/projects/[id]Styles'
 import Tag from '../../components/Tag/Tag'
@@ -45,7 +44,7 @@ const Project = ({ data }) => {
         justify="center"
         align="center"
       >
-        <Image alt={data.title} src={data.src} />
+        <img alt={data.title} src={data.src} />
         <Layout
           flex
           justify="flex-start"

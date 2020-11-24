@@ -13,7 +13,9 @@ const Image = ({
   ...props
 }) => {
   const [show, setShow] = useState(false)
+  const [skeleton, setSkeleton] = useState(true)
   const handleLoad = () => {
+    setSkeleton(false)
     setShow(true)
   }
 
@@ -26,7 +28,7 @@ const Image = ({
       radius={radius}
       margin={margin}
     >
-      <Skeleton />
+      {skeleton && <Skeleton />}
       <Img onLoad={handleLoad} show={show} alt={alt} {...props} />
     </SkeletonWrapper>
   )

@@ -84,7 +84,7 @@ export const Layout = styled.section`
     ${props =>
     props.resetHeight &&
     css`
-      min-height: initial;
+      min-height: ${({ minHeight }) => minHeight || 'initial'};
       height: ${({ height }) => height};
     `}
 `

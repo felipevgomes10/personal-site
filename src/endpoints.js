@@ -53,6 +53,16 @@ export const PROJECTS_GET = (page, total, user) => {
   }
 }
 
+export const PROJECTS_ALL_GET = () => {
+  return {
+    url: `${baseUrl}/api/project-all`,
+    options: {
+      method: 'GET',
+      cache: 'no-store'
+    }
+  }
+}
+
 export const PROJECT_GET = id => {
   return {
     url: `${baseUrl}/api/project/${id}`,

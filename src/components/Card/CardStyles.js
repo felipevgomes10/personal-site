@@ -24,7 +24,8 @@ export const CardWrapper = styled.div`
   background: ${props => props.theme.colors.background};
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
   border-radius: 9px;
-  padding: 2.5rem;
+  padding: ${({ padding }) => padding || '2.5rem'};
+  overflow: ${({ overflow }) => overflow};
   margin: 2.5rem;
   transition: 0.3s;
 

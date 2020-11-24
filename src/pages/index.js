@@ -16,6 +16,7 @@ const Home = ({ data }) => {
         align="center"
         direction="column"
         margin="2.5rem 0"
+        fromLeft
       >
         <Title text="Projetos destaques" />
         {data.map(({ id, content, title, src }) => (

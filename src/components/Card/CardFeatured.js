@@ -3,14 +3,13 @@ import { CardText, CardTitle, CardWrapper } from './CardStyles'
 import Link from 'next/link'
 import Arrow from '../../../public/arrow.svg'
 import { Layout } from '../Helpers/Layout'
-import Image from '../Helpers/Image/Image'
 import PropTypes from 'prop-types'
 
 const CardFeatured = ({ projectName, projectDescription, id, src }) => {
   return (
     <CardWrapper padding="0" overflow="hidden">
       <Layout grid columns="249px 1fr" resetHeight minHeight="inherit">
-        <Image alt="imagem" src={src} />
+        <img alt={projectName} src={src} />
         <Layout
           flex
           justify="center"

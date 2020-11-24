@@ -84,3 +84,15 @@ export const USER_GET = token => {
     }
   }
 }
+
+export const PROJECT_DELETE = (id, token) => {
+  return {
+    url: `${baseUrl}/api/project/${id}`,
+    options: {
+      method: 'DELETE',
+      headers: {
+        Authorization: 'Bearer ' + token
+      }
+    }
+  }
+}

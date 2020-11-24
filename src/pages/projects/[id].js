@@ -10,8 +10,9 @@ import Iframe from '../../components/Iframe/Iframe'
 import useMedia from '../../hooks/useMedia'
 import Loader from '../../components/Helpers/Loader/Loader'
 import PageHead from '../../components/Helpers/Head'
+import ProjectDelete from '../../components/Delete/ProjectDelete'
 
-const Project = ({ data }) => {
+const Project = ({ data, login }) => {
   const router = useRouter()
   const [technologies, setTechnologies] = useState([])
   const width = useMedia('(max-width: 50em)')
@@ -51,8 +52,10 @@ const Project = ({ data }) => {
           align="center"
           direction="column"
           padding="5.2rem"
+          position="relative"
           fromLeft
         >
+          {login && <ProjectDelete id={data.id} />}
           <Title text={data.title} />
           <Description>{data.content}</Description>
           <Layout
@@ -108,5 +111,6 @@ export const getStaticProps = async ({ params }) => {
 export default Project
 
 Project.propTypes = {
-  data: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired,
+  login: PropTypes.bool
 }

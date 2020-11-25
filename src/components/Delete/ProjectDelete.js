@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { Btn } from './ProjectDeleteStyles'
 import PropTypes from 'prop-types'
 import { GET_LOCAL_TOKEN, PROJECT_DELETE } from '../../endpoints'
@@ -9,7 +9,7 @@ const ProjectDelete = ({ id }) => {
   const router = useRouter()
   const { request } = useFetch()
 
-  const handleDelete = async () => {
+  const handleDelete = useCallback(async () => {
     const confirmation = confirm(
       'Tem certeza que deseja prosseguir com essa ação?'
     )
@@ -20,7 +20,7 @@ const ProjectDelete = ({ id }) => {
       await request(url, options)
       router.push('/')
     }
-  }
+  }, [id, request, router])
 
   return <Btn onClick={handleDelete}>Excluir</Btn>
 }

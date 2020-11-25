@@ -3,7 +3,6 @@ import { Layout } from '../../components/Helpers/Layout'
 import PropTypes from 'prop-types'
 import { useRouter } from 'next/router'
 import Title from '../../components/Helpers/Title/Title'
-import Image from '../../components/Helpers/Image/Image'
 import formProjects from '../../../public/form-projetos-large.jpg'
 import PageForm from '../../components/Form/PageForm'
 import FormInput from '../../components/Form/Input/FormInput'
@@ -15,6 +14,7 @@ import { GET_LOCAL_TOKEN, PROJECT_POST } from '../../endpoints'
 import ErrorText from '../../components/Helpers/Error/Error'
 import useMedia from '../../hooks/useMedia'
 import PageHead from '../../components/Helpers/Head'
+import useError from '../../hooks/useError'
 
 const AddProject = ({ login }) => {
   const router = useRouter()
@@ -25,7 +25,7 @@ const AddProject = ({ login }) => {
   const [image, setImage] = useState({})
   const [featured, setFeatured] = useState(false)
   const { loading, request } = useFetch()
-  const [error, setError] = useState(null)
+  const { error, validation } = useError()
   const width = useMedia('(max-width: 50em)')
 
   useEffect(() => {
@@ -42,16 +42,16 @@ const AddProject = ({ login }) => {
   const handleSubmit = useCallback(
     async e => {
       e.preventDefault()
-      setError(null)
       const token = GET_LOCAL_TOKEN()
-      const validate =
+      const comparison =
         projectName.validate() &&
         description.validate() &&
         videoLink.validate() &&
         technologies.validate() &&
         Object.entries(image).length !== 0
+      const send = validation(comparison)
 
-      if (validate) {
+      if (send) {
         const formData = new FormData()
         formData.append('projectName', projectName.value)
         formData.append('description', description.value)
@@ -63,8 +63,6 @@ const AddProject = ({ login }) => {
         const { url, options } = PROJECT_POST(formData, token)
         await request(url, options)
         router.push('/projects')
-      } else {
-        setError(true)
       }
     },
     [
@@ -75,7 +73,8 @@ const AddProject = ({ login }) => {
       image,
       featured,
       request,
-      router
+      router,
+      validation
     ]
   )
 
@@ -88,7 +87,7 @@ const AddProject = ({ login }) => {
         justify="center"
         align="center"
       >
-        <Image alt="formulário dos projetos" src={formProjects} />
+        {!width && <img alt="formulário dos projetos" src={formProjects} />}
         <Layout
           flex
           gridItem

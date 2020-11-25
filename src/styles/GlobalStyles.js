@@ -27,6 +27,7 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%;
     object-fit: cover;
     object-position: center;
+    justify-self: stretch;
   }
 
   ul {

@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect } from 'react'
 import { Layout } from '../../components/Helpers/Layout'
-import Image from '../../components/Helpers/Image/Image'
 import formAdm from '../../../public/form-adm-large.jpg'
 import PageForm from '../../components/Form/PageForm'
 import Title from '../../components/Helpers/Title/Title'
@@ -57,7 +56,7 @@ const Adm = ({ setLogin, setUser }) => {
         justify="center"
         align="center"
       >
-        {!width && <Image alt="form-adm-image" src={formAdm} />}
+        {!width && <img alt="form-adm-image" src={formAdm} />}
         <Layout flex justify="center" align="center" fromTop>
           <PageForm handleSubmit={handleSubmit}>
             <Title text="Login do Administrador" />

@@ -7,6 +7,7 @@ export const theme = {
     font: '#333333',
     fontOnPrimary: '#FFFFFF',
     border: '#DDDDDD',
-    error: '#cc3131'
+    error: '#cc3131',
+    confirmation: '#32c75a'
   }
 }

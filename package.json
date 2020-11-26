@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "emailjs-com": "^2.6.4",
     "next": "10.0.1",
     "next-images": "^1.6.2",
     "prop-types": "^15.7.2",

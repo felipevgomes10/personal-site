@@ -8,9 +8,17 @@ import PropTypes from 'prop-types'
 const CardFeatured = ({ projectName, projectDescription, id, src }) => {
   return (
     <CardWrapper padding="0" overflow="hidden">
-      <Layout grid columns="249px 1fr" resetHeight minHeight="inherit">
+      <Layout
+        as="div"
+        className="CardFeatured"
+        grid
+        columns="249px 1fr"
+        resetHeight
+        minHeight="inherit"
+      >
         <img alt={projectName} src={src} />
         <Layout
+          as="div"
           flex
           justify="center"
           align="center"

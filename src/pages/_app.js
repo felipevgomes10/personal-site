@@ -45,7 +45,7 @@ const App = ({ Component, pageProps }) => {
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         <PageHeader userData={data} login={login} setLogin={setLogin} />
-        <NavBar login={login} />
+        <NavBar login={login} setLogin={setLogin} />
         <Component
           {...pageProps}
           login={login}

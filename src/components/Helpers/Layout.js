@@ -88,4 +88,16 @@ export const Layout = styled.section`
       min-height: ${({ minHeight }) => minHeight || 'initial'};
       height: ${({ height }) => height};
     `}
+
+    &.CardFeatured {
+    @media (max-width: 50em) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    @media (max-width: 31.25em) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 2fr;
+    }
+  }
 `

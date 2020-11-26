@@ -24,6 +24,7 @@ const useForm = () => {
 
   return {
     value,
+    setValue,
     error,
     validate: () => validate(value),
     onChange,

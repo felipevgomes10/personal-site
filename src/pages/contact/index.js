@@ -11,24 +11,55 @@ import useForm from '../../hooks/useForm'
 import Button from '../../components/Helpers/Button/Button'
 import useError from '../../hooks/useError'
 import ErrorText from '../../components/Helpers/Error/Error'
+import useEmail from '../../hooks/useEmail'
+import PropTypes from 'prop-types'
+import ConfirmationText from '../../components/ConfirmationText/ConfirmationText'
 
-const Contact = () => {
+const Contact = ({ SERVICE_ID, TEMPLATE_ID, USER_ID }) => {
   const width = useMedia('(max-width: 50em)')
   const name = useForm()
   const email = useForm()
   const message = useForm()
   const { error, validation } = useError()
+  const { sendEmail, confirmation, sending, warn } = useEmail()
 
   const handleSubmit = useCallback(
-    e => {
+    async e => {
       e.preventDefault()
       const comparison =
         name.validate() && email.validate() && message.validate()
+
       const send = validation(comparison)
-      if (send) console.log('enviou')
-      else console.log('não enviar')
+      if (send) {
+        const result = await sendEmail(
+          SERVICE_ID,
+          TEMPLATE_ID,
+          {
+            from_name: name.value,
+            to_name: 'Felipe',
+            message: message.value,
+            reply_to: email.value
+          },
+          USER_ID
+        )
+
+        if (result) {
+          name.setValue('')
+          email.setValue('')
+          message.setValue('')
+        }
+      }
     },
-    [validation, name, email, message]
+    [
+      validation,
+      name,
+      email,
+      message,
+      sendEmail,
+      SERVICE_ID,
+      TEMPLATE_ID,
+      USER_ID
+    ]
   )
 
   return (
@@ -85,8 +116,17 @@ const Contact = () => {
               onBlur={message.onBlur}
               error={message.error}
             />
-            <Button margin="2.6rem 0 0">Enviar</Button>
+            {sending ? (
+              <Button margin="2.6rem 0 0" disabled>
+                Enviando...
+              </Button>
+            ) : (
+              <Button margin="2.6rem 0 0">Enviar</Button>
+            )}
             {error && <ErrorText>{error}</ErrorText>}
+            {sending === false && (
+              <ConfirmationText confirm={confirmation}>{warn}</ConfirmationText>
+            )}
           </PageForm>
         </Layout>
       </Layout>
@@ -94,4 +134,20 @@ const Contact = () => {
   )
 }
 
+export const getStaticProps = async () => {
+  return {
+    props: {
+      SERVICE_ID: process.env.SERVICE_ID,
+      TEMPLATE_ID: process.env.TEMPLATE_ID,
+      USER_ID: process.env.USER_ID
+    }
+  }
+}
+
 export default Contact
+
+Contact.propTypes = {
+  SERVICE_ID: PropTypes.string,
+  TEMPLATE_ID: PropTypes.string,
+  USER_ID: PropTypes.string
+}

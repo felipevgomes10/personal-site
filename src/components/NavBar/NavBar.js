@@ -25,16 +25,17 @@ const NavBar = ({ login, setLogin }) => {
 
   useEffect(() => {
     const svgs = document.querySelectorAll('.NavBarSvg')
-    if (mobile) {
+    if ((mobile && login) || mobile) {
       svgs.forEach(svg => svg.classList.add('NavBarShowSvg'))
     } else {
       svgs.forEach(svg => svg.classList.remove('NavBarShowSvg'))
     }
-  }, [mobile])
+  }, [mobile, login])
 
   useEffect(() => {
     if (NavBarRef.current && BtnMobileRef.current) {
-      toggleClasses()
+      NavBarRef.current.classList.remove('NavBarWrapperActive')
+      BtnMobileRef.current.classList.remove('NavBarBtnActive')
     }
   }, [pathname])
 

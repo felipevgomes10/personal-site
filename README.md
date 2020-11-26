@@ -1,3 +1,5 @@
+<img src="/public/logo.svg" alt="logo" />
+
 # Personal Page
 
 Essa é a minha página pessoal (portfólio), desenvolvido com  Next.js.

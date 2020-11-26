@@ -5,10 +5,12 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
 import Image from '../Helpers/Image/Image'
+import useMedia from '../../hooks/useMedia'
 
 const PageHeader = ({ userData, login, setLogin }) => {
   const admLink = useRef(null)
   const { pathname, push } = useRouter()
+  const mobile = useMedia('(max-width: 31.25em)')
 
   useEffect(() => {
     if (admLink && admLink.current) {
@@ -32,7 +34,7 @@ const PageHeader = ({ userData, login, setLogin }) => {
         </a>
       </Link>
       <div className="headerAdm">
-        {login ? (
+        {login && !mobile ? (
           <>
             <p>Bem vindo, Felipe /</p>
             <button onClick={handleLogout}>Logout</button>

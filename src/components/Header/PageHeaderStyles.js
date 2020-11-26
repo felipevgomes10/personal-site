@@ -16,6 +16,7 @@ export const Header = styled.header`
 
   & svg {
     height: 5rem;
+    width: auto;
   }
 
   & .headerAdm {
@@ -53,5 +54,11 @@ export const Header = styled.header`
     border-radius: 50%;
     overflow: hidden;
     margin-left: 2rem;
+  }
+
+  @media (max-width: 31.25em) {
+    & div a[href='/adm'] {
+      display: none;
+    }
   }
 `

@@ -11,6 +11,12 @@ export const GlobalStyle = createGlobalStyle`
 
   html {
     font-size: 62.5%;
+
+    @media (max-width: 31.25em) {
+      font-size: 50%;
+      line-height: 22px;
+      letter-spacing: .5px;
+    }
   }
 
   body {

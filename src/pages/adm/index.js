@@ -55,6 +55,7 @@ const Adm = ({ setLogin, setUser }) => {
         columns={tablet ? '1fr' : '1fr 1fr'}
         justify={tablet ? 'stretch' : 'center'}
         align={tablet ? 'stretch' : 'center'}
+        resetHeight={tablet}
       >
         {!tablet && <img alt="form-adm-image" src={formAdm} />}
         <Layout
@@ -62,8 +63,8 @@ const Adm = ({ setLogin, setUser }) => {
           flex
           justify="center"
           align="center"
-          resetHeight={tablet}
           padding="4rem"
+          resetHeight={tablet}
           fromTop
         >
           <PageForm handleSubmit={handleSubmit}>

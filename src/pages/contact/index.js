@@ -70,6 +70,7 @@ const Contact = ({ SERVICE_ID, TEMPLATE_ID, USER_ID }) => {
         columns={tablet ? '1fr' : '1fr 1fr'}
         justify={tablet ? 'stretch' : 'center'}
         align={tablet ? 'stretch' : 'center'}
+        resetHeight={tablet}
       >
         {!tablet && <img alt="entrar em contato" src={formLarge} />}
         <Layout
@@ -81,6 +82,7 @@ const Contact = ({ SERVICE_ID, TEMPLATE_ID, USER_ID }) => {
           align="center"
           direction="column"
           margin="3.8rem"
+          resetHeight={tablet}
           fromLeft
         >
           <PageForm handleSubmit={handleSubmit}>

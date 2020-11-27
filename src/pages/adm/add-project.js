@@ -90,6 +90,7 @@ const AddProject = ({ login }) => {
         columns={tablet ? '1fr' : '1fr 1fr'}
         justify={tablet ? 'stretch' : 'center'}
         align={tablet ? 'stretch' : 'center'}
+        resetHeight={tablet}
       >
         {!tablet && <img alt="formulário dos projetos" src={formProjects} />}
         <Layout
@@ -100,6 +101,7 @@ const AddProject = ({ login }) => {
           justify="center"
           align="center"
           margin="3.8rem"
+          resetHeight={tablet}
           fromLeft
         >
           <PageForm handleSubmit={handleSubmit}>

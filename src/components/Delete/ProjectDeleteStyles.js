@@ -14,7 +14,7 @@ export const Btn = styled.button`
 
   @media (max-width: 31.25em) {
     top: initial;
-    bottom: 34px;
+    bottom: 36.5px;
     right: 50%;
     transform: translateX(50%);
   }

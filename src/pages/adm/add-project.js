@@ -88,8 +88,8 @@ const AddProject = ({ login }) => {
       <Layout
         grid
         columns={tablet ? '1fr' : '1fr 1fr'}
-        justify="center"
-        align="center"
+        justify={tablet ? 'stretch' : 'center'}
+        align={tablet ? 'stretch' : 'center'}
       >
         {!tablet && <img alt="formulário dos projetos" src={formProjects} />}
         <Layout
@@ -157,10 +157,12 @@ const AddProject = ({ login }) => {
               onChange={handleImage}
             />
             <FormInput
+              otherWrapper={true}
               other={true}
               labelInline={true}
               id="formCheckbox"
               margin="2.6rem 1.5rem 1rem 0"
+              marginInput="3.1rem 0 0"
               label="Destaque"
               type="checkbox"
               value="featured"

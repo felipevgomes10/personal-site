@@ -68,8 +68,8 @@ const Contact = ({ SERVICE_ID, TEMPLATE_ID, USER_ID }) => {
       <Layout
         grid
         columns={tablet ? '1fr' : '1fr 1fr'}
-        justify="center"
-        align="center"
+        justify={tablet ? 'stretch' : 'center'}
+        align={tablet ? 'stretch' : 'center'}
       >
         {!tablet && <img alt="entrar em contato" src={formLarge} />}
         <Layout

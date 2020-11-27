@@ -27,6 +27,7 @@ export const GlobalStyle = createGlobalStyle`
     background: #FFFFFF;
     line-height: 21px;
     letter-spacing: .5px;
+    max-width: 1800px;
   }
 
   img {
@@ -53,6 +54,12 @@ export const GlobalStyle = createGlobalStyle`
   input,
   textarea {
     font-family: 'Nunito', sans-serif;
+  }
+
+  form {
+    @media (max-width: 50em) {
+      width: 100%;
+    }
   }
 
   .loading {

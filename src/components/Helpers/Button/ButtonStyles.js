@@ -16,7 +16,7 @@ export const Btn = styled.button`
   cursor: pointer;
 
   @media (max-width: 50em) {
-    width: 30.7rem;
+    width: 100%;
   }
 
   &:hover {

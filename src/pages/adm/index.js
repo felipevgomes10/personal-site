@@ -53,8 +53,8 @@ const Adm = ({ setLogin, setUser }) => {
       <Layout
         grid
         columns={tablet ? '1fr' : '1fr 1fr'}
-        justify="center"
-        align="center"
+        justify={tablet ? 'stretch' : 'center'}
+        align={tablet ? 'stretch' : 'center'}
         padding="4rem"
       >
         {!tablet && <img alt="form-adm-image" src={formAdm} />}

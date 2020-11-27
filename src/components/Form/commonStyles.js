@@ -9,6 +9,10 @@ export const commonStyles = css`
   font-size: 1.6rem;
   transition: 0.3s;
   color: ${props => props.theme.colors.font};
+
+  @media (max-width: 50em) {
+    width: 100%;
+  }
 `
 
 export const onFocus = css`

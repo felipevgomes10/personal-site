@@ -14,6 +14,10 @@ export const Input = styled.input`
       width: initial;
       height: initial;
       padding: 0.5rem;
+
+      @media (max-width: 50em) {
+        font-size: 1.36rem;
+      }
     `}
 
   &:focus {

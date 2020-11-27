@@ -15,6 +15,10 @@ export const Btn = styled.button`
   transition: 0.1s;
   cursor: pointer;
 
+  @media (max-width: 50em) {
+    width: 30.7rem;
+  }
+
   &:hover {
     box-shadow: 0 0 0 2px ${props => props.theme.colors.primaryLight},
       0 0 0 3px ${props => props.theme.colors.primary};

@@ -56,7 +56,7 @@ export const Header = styled.header`
     margin-left: 2rem;
   }
 
-  @media (max-width: 31.25em) {
+  @media (max-width: 50em) {
     & div a[href='/adm'] {
       display: none;
     }

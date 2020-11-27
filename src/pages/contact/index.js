@@ -16,7 +16,7 @@ import PropTypes from 'prop-types'
 import ConfirmationText from '../../components/ConfirmationText/ConfirmationText'
 
 const Contact = ({ SERVICE_ID, TEMPLATE_ID, USER_ID }) => {
-  const width = useMedia('(max-width: 50em)')
+  const tablet = useMedia('(max-width: 50em)')
   const name = useForm()
   const email = useForm()
   const message = useForm()
@@ -67,15 +67,16 @@ const Contact = ({ SERVICE_ID, TEMPLATE_ID, USER_ID }) => {
       <PageHead title="Entre em Contato | Web Dev Felipe" />
       <Layout
         grid
-        columns={width ? '1fr' : '1fr 1fr'}
+        columns={tablet ? '1fr' : '1fr 1fr'}
         justify="center"
         align="center"
       >
-        {!width && <img alt="entrar em contato" src={formLarge} />}
+        {!tablet && <img alt="entrar em contato" src={formLarge} />}
         <Layout
+          as="div"
           flex
           gridItem
-          justifySelf="start"
+          justifySelf={tablet ? 'initial' : 'start'}
           justify="center"
           align="center"
           direction="column"

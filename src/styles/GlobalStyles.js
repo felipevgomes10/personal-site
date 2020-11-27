@@ -25,6 +25,8 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     min-height: 100vh;
     background: #FFFFFF;
+    line-height: 21px;
+    letter-spacing: .5px;
   }
 
   img {

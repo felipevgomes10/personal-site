@@ -16,7 +16,7 @@ const NavBar = ({ login, setLogin }) => {
   const { pathname, push } = useRouter()
   const NavBarRef = useRef(null)
   const BtnMobileRef = useRef(null)
-  const mobile = useMedia('(max-width: 31.25em)')
+  const tablet = useMedia('(max-width: 50em)')
 
   const toggleClasses = () => {
     NavBarRef.current.classList.toggle('NavBarWrapperActive')
@@ -25,12 +25,12 @@ const NavBar = ({ login, setLogin }) => {
 
   useEffect(() => {
     const svgs = document.querySelectorAll('.NavBarSvg')
-    if ((mobile && login) || mobile) {
+    if ((tablet && login) || tablet) {
       svgs.forEach(svg => svg.classList.add('NavBarShowSvg'))
     } else {
       svgs.forEach(svg => svg.classList.remove('NavBarShowSvg'))
     }
-  }, [mobile, login])
+  }, [tablet, login])
 
   useEffect(() => {
     if (NavBarRef.current && BtnMobileRef.current) {
@@ -90,11 +90,11 @@ const NavBar = ({ login, setLogin }) => {
           <Link href="/adm/add-project">
             <a>
               <Add className="NavBarSvg" />
-              Incluir Projeto
+              Incluir
             </a>
           </Link>
         )}
-        {mobile && !login && (
+        {tablet && !login && (
           <Link href="/adm">
             <a>
               <Adm className="NavBarSvg" />
@@ -102,14 +102,14 @@ const NavBar = ({ login, setLogin }) => {
             </a>
           </Link>
         )}
-        {mobile && login && (
+        {tablet && login && (
           <button onClick={handleLogout}>
             <Logout className="NavBarSvg" />
             Sair
           </button>
         )}
       </div>
-      {mobile && (
+      {tablet && (
         <button
           onClick={handleMobileMenu}
           className="NavBarMobile"

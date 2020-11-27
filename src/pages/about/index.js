@@ -35,7 +35,13 @@ const About = ({ data }) => {
           meus trabalhos, ou se preferir, clique em Entrar em contato e me diga
           o que posso fazer por você.
         </AboutText>
-        <Layout flex justify="space-between" align="center" resetHeight>
+        <Layout
+          as="div"
+          flex
+          justify="space-between"
+          align="center"
+          resetHeight
+        >
           <AboutLink href={data.blog} target="_blank" rel="noreferrer">
             <Linkedin />
           </AboutLink>

@@ -15,7 +15,8 @@ import ProjectDelete from '../../components/Delete/ProjectDelete'
 const Project = ({ data, login }) => {
   const router = useRouter()
   const [technologies, setTechnologies] = useState([])
-  const width = useMedia('(max-width: 50em)')
+  const tablet = useMedia('(max-width: 60em)')
+  const mobile = useMedia('(max-width: 31.25em)')
 
   useEffect(() => {
     if (data) {
@@ -41,17 +42,18 @@ const Project = ({ data, login }) => {
       <PageHead title={`${data.title} | Web Dev Felipe`} />
       <Layout
         grid
-        columns={width ? '1fr' : '1fr 1fr'}
+        columns={tablet ? '1fr' : '1fr 1fr'}
         justify="center"
         align="center"
       >
-        <img alt={data.title} src={data.src} />
+        {!tablet && <img alt={data.title} src={data.src} />}
         <Layout
+          as="div"
           flex
-          justify="flex-start"
+          justify="center"
           align="center"
           direction="column"
-          padding="5.2rem"
+          padding={mobile ? '5.2rem 5.2rem 12.2rem' : '5.2rem'}
           position="relative"
           fromLeft
         >
@@ -59,6 +61,7 @@ const Project = ({ data, login }) => {
           <Title text={data.title} />
           <Description>{data.content}</Description>
           <Layout
+            as="div"
             flex
             flexItem
             justify="flex-start"

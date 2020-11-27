@@ -10,7 +10,7 @@ import useMedia from '../../hooks/useMedia'
 const PageHeader = ({ userData, login, setLogin }) => {
   const admLink = useRef(null)
   const { pathname, push } = useRouter()
-  const mobile = useMedia('(max-width: 31.25em)')
+  const tablet = useMedia('(max-width: 50em)')
 
   useEffect(() => {
     if (admLink && admLink.current) {
@@ -34,7 +34,7 @@ const PageHeader = ({ userData, login, setLogin }) => {
         </a>
       </Link>
       <div className="headerAdm">
-        {login && !mobile ? (
+        {login && !tablet ? (
           <>
             <p>Bem vindo, Felipe /</p>
             <button onClick={handleLogout}>Logout</button>

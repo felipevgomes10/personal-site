@@ -26,17 +26,21 @@ const AddProject = ({ login }) => {
   const [featured, setFeatured] = useState(false)
   const { loading, request } = useFetch()
   const { error, validation } = useError()
-  const width = useMedia('(max-width: 50em)')
+  const tablet = useMedia('(max-width: 50em)')
 
   useEffect(() => {
     if (!login) router.push('/')
   }, [router, login])
 
   const handleImage = useCallback(({ target }) => {
-    setImage({
-      raw: target.files[0],
-      preview: URL.createObjectURL(target.files[0])
-    })
+    if (target.files[0]) {
+      setImage({
+        raw: target.files[0],
+        preview: URL.createObjectURL(target.files[0])
+      })
+    } else {
+      setImage({})
+    }
   }, [])
 
   const handleSubmit = useCallback(
@@ -83,18 +87,20 @@ const AddProject = ({ login }) => {
       <PageHead title="Adicionar Projeto | Web Dev Felipe" />
       <Layout
         grid
-        columns={width ? '1fr' : '1fr 1fr'}
-        justify="center"
-        align="center"
+        columns={tablet ? '1fr' : '1fr 1fr'}
+        justify={tablet ? 'stretch' : 'center'}
+        align={tablet ? 'stretch' : 'center'}
       >
-        {!width && <img alt="formulário dos projetos" src={formProjects} />}
+        {!tablet && <img alt="formulário dos projetos" src={formProjects} />}
         <Layout
+          as="div"
           flex
           gridItem
-          justifySelf="start"
+          justifySelf={tablet ? 'initial' : 'start'}
           justify="center"
           align="center"
           margin="3.8rem"
+          resetHeight={tablet}
           fromLeft
         >
           <PageForm handleSubmit={handleSubmit}>
@@ -152,10 +158,12 @@ const AddProject = ({ login }) => {
               onChange={handleImage}
             />
             <FormInput
+              otherWrapper={true}
               other={true}
               labelInline={true}
               id="formCheckbox"
               margin="2.6rem 1.5rem 1rem 0"
+              marginInput="3.1rem 0 0"
               label="Destaque"
               type="checkbox"
               value="featured"

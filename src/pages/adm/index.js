@@ -18,7 +18,7 @@ const Adm = ({ setLogin, setUser }) => {
   const user = useForm()
   const password = useForm()
   const router = useRouter()
-  const width = useMedia('(max-width: 50em)')
+  const tablet = useMedia('(max-width: 50em)')
 
   useEffect(() => {
     router.prefetch('/adm/add-project')
@@ -52,14 +52,22 @@ const Adm = ({ setLogin, setUser }) => {
       <PageHead title="Administrador | Web Dev Felipe" />
       <Layout
         grid
-        columns={width ? '1fr' : '1fr 1fr'}
-        justify="center"
-        align="center"
+        columns={tablet ? '1fr' : '1fr 1fr'}
+        justify={tablet ? 'stretch' : 'center'}
+        align={tablet ? 'stretch' : 'center'}
       >
-        {!width && <img alt="form-adm-image" src={formAdm} />}
-        <Layout flex justify="center" align="center" fromTop>
+        {!tablet && <img alt="form-adm-image" src={formAdm} />}
+        <Layout
+          as="div"
+          flex
+          justify="center"
+          align="center"
+          padding="4rem"
+          resetHeight={tablet}
+          fromTop
+        >
           <PageForm handleSubmit={handleSubmit}>
-            <Title text="Login do Administrador" />
+            <Title text="Administrador" />
             <FormInput
               id="userForm"
               margin="2.6rem 0 1rem"

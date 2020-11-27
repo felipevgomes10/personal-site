@@ -26,7 +26,7 @@ export const Nav = styled.nav`
       width: 50%;
     }
 
-    @media (max-width: 31.25em) {
+    @media (max-width: 50em) {
       align-items: flex-start;
       flex-direction: column;
       position: absolute;
@@ -47,6 +47,10 @@ export const Nav = styled.nav`
         right: 21px;
       }
     }
+  }
+
+  & .NavBarWrapper a:not(:last-child) {
+    margin-right: 3rem;
   }
 
   & .NavBarWrapper a,
@@ -75,7 +79,7 @@ export const Nav = styled.nav`
       }
     }
 
-    @media (max-width: 31.25em) {
+    @media (max-width: 50em) {
       width: 100%;
       padding: 1rem 0;
       font-size: 2rem;

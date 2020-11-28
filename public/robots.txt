@@ -1,0 +1,13 @@
+Sitemap: https://webdevfelipe.vercel.app/sitemap.xml
+
+User-Agent: *
+Allow: /
+Allow: /projects
+Allow: /projects/27
+Allow: /projects/33
+Allow: /projects/39
+Allow: /projects/37
+Allow: /about
+Allow: /contact
+Disallow: /adm
+Disallow: /adm/add-project

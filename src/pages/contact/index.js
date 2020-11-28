@@ -64,7 +64,28 @@ const Contact = ({ SERVICE_ID, TEMPLATE_ID, USER_ID }) => {
 
   return (
     <>
-      <PageHead title="Entre em Contato | Web Dev Felipe" />
+      <PageHead
+        title="Entre em Contato | Web Dev Felipe"
+        description="Página de contato do desenvolvedor Frontend Felipe Gomes. Entre em contato por aqui."
+        href="https://webdevfelipe.vercel.app/contact"
+        author="Felipe Gomes | Desenvolvedor React.js"
+        robots="index,follow"
+        ogTitle="Web Dev Felipe | Contato | Desenvolvedor React.js"
+        ogDescription="Página de contato do desenvolvedor Frontend Felipe Gomes. Entre em contato por aqui."
+        ogUrl="https://webdevfelipe.vercel.app/contact"
+        ogSiteName="Web Dev Felipe"
+        ogImage="https://drive.google.com/file/d/1XAXUrIv03Se4oogcnVtPR7frAn1b79GZ/view?usp=sharing"
+        ogType="website"
+        ogAlt="website logo"
+        ogLocole="pt-BR"
+        twitterTitle="Web Dev Felipe | Contato | Desenvolvedor React.js"
+        twitterDescription="Página de contato do desenvolvedor Frontend Felipe Gomes. Entre em contato por aqui."
+        twitterUrl="https://webdevfelipe.vercel.app/contact"
+        twitterCard="summary"
+        twitterImage="https://drive.google.com/file/d/1XAXUrIv03Se4oogcnVtPR7frAn1b79GZ/view?usp=sharing"
+        twitterAlt="website logo"
+        twitterCreator="@felipevgomes10"
+      />
       <Layout
         grid
         columns={tablet ? '1fr' : '1fr 1fr'}

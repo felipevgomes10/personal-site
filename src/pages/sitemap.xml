@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+
+<url>
+  <loc>https://webdevfelipe.vercel.app/</loc>
+  <lastmod>2020-11-28T21:01:14+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://webdevfelipe.vercel.app/adm</loc>
+  <lastmod>2020-11-28T21:01:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://webdevfelipe.vercel.app/projects</loc>
+  <lastmod>2020-11-28T21:01:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://webdevfelipe.vercel.app/about</loc>
+  <lastmod>2020-11-28T21:01:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://webdevfelipe.vercel.app/contact</loc>
+  <lastmod>2020-11-28T21:01:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://webdevfelipe.vercel.app/projects/27</loc>
+  <lastmod>2020-11-28T21:01:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://webdevfelipe.vercel.app/projects/33</loc>
+  <lastmod>2020-11-28T21:01:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://webdevfelipe.vercel.app/projects/39</loc>
+  <lastmod>2020-11-28T21:01:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webdevfelipe.vercel.app/projects/37</loc>
+  <lastmod>2020-11-28T21:01:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>

@@ -44,4 +44,11 @@ export const Img = styled.img`
     css`
       opacity: 1;
     `}
+
+  ${props =>
+    props.logged &&
+    css`
+      border-radius: 50%;
+      border: 3px solid ${props => props.theme.colors.confirmation};
+    `}
 `

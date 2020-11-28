@@ -39,7 +39,28 @@ const Project = ({ data, login }) => {
   }
   return (
     <>
-      <PageHead title={`${data.title} | Web Dev Felipe`} />
+      <PageHead
+        title={`${data.title} | Web Dev Felipe`}
+        description={`Página do projeto ${data.title} do desenvolvedor Frontend Felipe Gomes.`}
+        href={`https://webdevfelipe.vercel.app/projects/${data.id}`}
+        author="Felipe Gomes | Desenvolvedor React.js"
+        robots="index,follow"
+        ogTitle="Web Dev Felipe | Projeto | Desenvolvedor React.js"
+        ogDescription={`Página do projeto ${data.title} do desenvolvedor Frontend Felipe Gomes.`}
+        ogUrl={`https://webdevfelipe.vercel.app/projects/${data.id}`}
+        ogSiteName="Web Dev Felipe"
+        ogImage="https://drive.google.com/file/d/1XAXUrIv03Se4oogcnVtPR7frAn1b79GZ/view?usp=sharing"
+        ogType="website"
+        ogAlt="website logo"
+        ogLocole="pt-BR"
+        twitterTitle="Web Dev Felipe | Projeto | Desenvolvedor React.js"
+        twitterDescription={`Página do projeto ${data.title} do desenvolvedor Frontend Felipe Gomes.`}
+        twitterUrl={`https://webdevfelipe.vercel.app/projects/${data.id}`}
+        twitterCard="summary"
+        twitterImage="https://drive.google.com/file/d/1XAXUrIv03Se4oogcnVtPR7frAn1b79GZ/view?usp=sharing"
+        twitterAlt="website logo"
+        twitterCreator="@felipevgomes10"
+      />
       <Layout
         grid
         columns={tablet ? '1fr' : '1fr 1fr'}

@@ -46,6 +46,7 @@ const PageHeader = ({ userData, login, setLogin }) => {
         )}
         <Image
           className="avatar"
+          logged={login}
           alt={userData && userData.name}
           src={userData && userData.avatar_url}
         />

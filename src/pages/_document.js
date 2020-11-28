@@ -33,6 +33,10 @@ export default class MyDocument extends Document {
       <Html lang="pt-BR">
         <Head>
           <meta charSet="utf-8" />
+          <meta
+            name="google-site-verification"
+            content="zCcOQwjodArBvfR95sWp-nR4k3jxP_AoS54tQVaSr1g"
+          />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
             href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap"

@@ -11,7 +11,28 @@ import PageHead from '../../components/Helpers/Head'
 const About = ({ data }) => {
   return (
     <>
-      <PageHead title="Sobre | Web Dev Felipe" />
+      <PageHead
+        title="Sobre | Web Dev Felipe"
+        description="Página sobre o desenvolvedor Frontend Felipe Gomes. Veja aqui os melhores sites da internet."
+        href="https://webdevfelipe.vercel.app/about"
+        author="Felipe Gomes | Desenvolvedor React.js"
+        robots="index,follow"
+        ogTitle="Web Dev Felipe | Sobre | Desenvolvedor React.js"
+        ogDescription="Página sobre o desenvolvedor Frontend Felipe Gomes. Veja aqui os melhores sites da internet."
+        ogUrl="https://webdevfelipe.vercel.app/about"
+        ogSiteName="Web Dev Felipe"
+        ogImage="https://drive.google.com/file/d/1XAXUrIv03Se4oogcnVtPR7frAn1b79GZ/view?usp=sharing"
+        ogType="website"
+        ogAlt="website logo"
+        ogLocole="pt-BR"
+        twitterTitle="Web Dev Felipe | Sobre | Desenvolvedor React.js"
+        twitterDescription="Página sobre o desenvolvedor Frontend Felipe Gomes. Veja aqui os melhores sites da internet."
+        twitterUrl="https://webdevfelipe.vercel.app/projects"
+        twitterCard="summary"
+        twitterImage="https://drive.google.com/file/d/1XAXUrIv03Se4oogcnVtPR7frAn1b79GZ/view?usp=sharing"
+        twitterAlt="website logo"
+        twitterCreator="@felipevgomes10"
+      />
       <Layout
         flex
         justify="center"

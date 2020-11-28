@@ -97,7 +97,7 @@ export const Layout = styled.section`
 
     @media (max-width: 31.25em) {
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr 2fr;
+      grid-template-rows: 250px min-content;
     }
   }
 `

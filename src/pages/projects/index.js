@@ -18,7 +18,28 @@ const Projects = ({ projectsData, user }) => {
 
   return (
     <>
-      <PageHead title="Projetos | Web Dev Felipe" />
+      <PageHead
+        title="Projetos | Web Dev Felipe"
+        description="Página de projetos do desenvolvedor Frontend Felipe Gomes. Veja aqui os melhores sites da internet."
+        href="https://webdevfelipe.vercel.app/projects"
+        author="Felipe Gomes | Desenvolvedor React.js"
+        robots="index,follow"
+        ogTitle="Web Dev Felipe | Projetos | Desenvolvedor React.js"
+        ogDescription="Página de projetos do desenvolvedor Frontend Felipe Gomes. Veja aqui os melhores sites da internet."
+        ogUrl="https://webdevfelipe.vercel.app/projects"
+        ogSiteName="Web Dev Felipe"
+        ogImage="https://drive.google.com/file/d/1XAXUrIv03Se4oogcnVtPR7frAn1b79GZ/view?usp=sharing"
+        ogType="website"
+        ogAlt="website logo"
+        ogLocole="pt-BR"
+        twitterTitle="Web Dev Felipe | Projetos | Desenvolvedor React.js"
+        twitterDescription="Página de projetos do desenvolvedor Frontend Felipe Gomes. Veja aqui os melhores sites da internet."
+        twitterUrl="https://webdevfelipe.vercel.app/projects"
+        twitterCard="summary"
+        twitterImage="https://drive.google.com/file/d/1XAXUrIv03Se4oogcnVtPR7frAn1b79GZ/view?usp=sharing"
+        twitterAlt="website logo"
+        twitterCreator="@felipevgomes10"
+      />
       <Layout
         flex
         justify="center"

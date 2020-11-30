@@ -15,6 +15,7 @@ import ErrorText from '../../components/Helpers/Error/Error'
 import useMedia from '../../hooks/useMedia'
 import PageHead from '../../components/Helpers/Head'
 import useError from '../../hooks/useError'
+import Image from '../../components/Helpers/Image/Image'
 
 const AddProject = ({ login }) => {
   const router = useRouter()
@@ -91,7 +92,7 @@ const AddProject = ({ login }) => {
         justify={tablet ? 'stretch' : 'center'}
         align={tablet ? 'stretch' : 'center'}
       >
-        {!tablet && <img alt="formulário dos projetos" src={formProjects} />}
+        {!tablet && <Image alt="formulário dos projetos" src={formProjects} />}
         <Layout
           as="div"
           flex

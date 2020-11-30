@@ -13,6 +13,7 @@ import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
 import useMedia from '../../hooks/useMedia'
 import PageHead from '../../components/Helpers/Head'
+import Image from '../../components/Helpers/Image/Image'
 
 const Adm = ({ setLogin, setUser }) => {
   const user = useForm()
@@ -56,7 +57,7 @@ const Adm = ({ setLogin, setUser }) => {
         justify={tablet ? 'stretch' : 'center'}
         align={tablet ? 'stretch' : 'center'}
       >
-        {!tablet && <img alt="form-adm-image" src={formAdm} />}
+        {!tablet && <Image alt="form-adm-image" src={formAdm} />}
         <Layout
           as="div"
           flex

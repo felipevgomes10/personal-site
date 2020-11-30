@@ -5,6 +5,7 @@ const PageFooter = () => {
   return (
     <Footer>
       <p>Design por Felipe Gomes</p>
+      <span>{new Date().getFullYear()}</span>
     </Footer>
   )
 }

@@ -38,8 +38,8 @@ export const CardWrapper = styled.div`
     ${flex}
     align-self: flex-end;
     border-radius: 2px;
-    height: 3.3rem;
-    width: 11.2rem;
+    height: 4.3rem;
+    width: 12.5rem;
     font-size: 1.7rem;
     margin-top: 1.7rem;
     background: ${props => props.theme.colors.primary};

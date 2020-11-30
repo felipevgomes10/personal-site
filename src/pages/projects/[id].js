@@ -11,6 +11,7 @@ import useMedia from '../../hooks/useMedia'
 import Loader from '../../components/Helpers/Loader/Loader'
 import PageHead from '../../components/Helpers/Head'
 import ProjectDelete from '../../components/Delete/ProjectDelete'
+import Image from '../../components/Helpers/Image/Image'
 
 const Project = ({ data, login }) => {
   const router = useRouter()
@@ -41,23 +42,23 @@ const Project = ({ data, login }) => {
     <>
       <PageHead
         title={`${data.title} | Web Dev Felipe`}
-        description={`Página do projeto ${data.title} do desenvolvedor Frontend Felipe Gomes.`}
+        description={`Projeto ${data.title} do desenvolvedor web Felipe Gomes. Veja aqui os melhores sites da internet construídos com HTML, CSS, JavaScript, React, Next e outras tecnologias de ponta para a criação de sites para a web.`}
         href={`https://webdevfelipe.vercel.app/projects/${data.id}`}
-        author="Felipe Gomes | Desenvolvedor React.js"
+        author="Felipe Gomes | Desenvolvedor Web"
         robots="index,follow"
-        ogTitle="Web Dev Felipe | Projeto | Desenvolvedor React.js"
-        ogDescription={`Página do projeto ${data.title} do desenvolvedor Frontend Felipe Gomes.`}
+        ogTitle="Web Dev Felipe | Projeto | Desenvolvedor Web"
+        ogDescription={`Projeto ${data.title} do desenvolvedor web Felipe Gomes. Veja aqui os melhores sites da internet construídos com HTML, CSS, JavaScript, React, Next e outras tecnologias de ponta para a criação de sites para a web.`}
         ogUrl={`https://webdevfelipe.vercel.app/projects/${data.id}`}
         ogSiteName="Web Dev Felipe"
-        ogImage="https://drive.google.com/file/d/1XAXUrIv03Se4oogcnVtPR7frAn1b79GZ/view?usp=sharing"
+        ogImage={data.src}
         ogType="website"
         ogAlt="website logo"
         ogLocole="pt-BR"
-        twitterTitle="Web Dev Felipe | Projeto | Desenvolvedor React.js"
-        twitterDescription={`Página do projeto ${data.title} do desenvolvedor Frontend Felipe Gomes.`}
+        twitterTitle="Web Dev Felipe | Projeto | Desenvolvedor Web"
+        twitterDescription={`Projeto ${data.title} do desenvolvedor web Felipe Gomes. Veja aqui os melhores sites da internet construídos com HTML, CSS, JavaScript, React, Next e outras tecnologias de ponta para a criação de sites para a web.`}
         twitterUrl={`https://webdevfelipe.vercel.app/projects/${data.id}`}
         twitterCard="summary"
-        twitterImage="https://drive.google.com/file/d/1XAXUrIv03Se4oogcnVtPR7frAn1b79GZ/view?usp=sharing"
+        twitterImage={data.src}
         twitterAlt="website logo"
         twitterCreator="@felipevgomes10"
       />
@@ -67,7 +68,7 @@ const Project = ({ data, login }) => {
         justify="center"
         align="center"
       >
-        {!tablet && <img alt={data.title} src={data.src} />}
+        {!tablet && <Image alt={data.title} src={data.src} />}
         <Layout
           as="div"
           flex

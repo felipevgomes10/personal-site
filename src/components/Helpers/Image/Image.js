@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import PropTypes from 'prop-types'
 import { Img, Skeleton, SkeletonWrapper } from './ImageStyles'
 
@@ -14,10 +14,19 @@ const Image = ({
 }) => {
   const [show, setShow] = useState(false)
   const [skeleton, setSkeleton] = useState(true)
-  const handleLoad = () => {
+  const ImgRef = useRef(null)
+
+  useEffect(() => {
+    if (ImgRef.current.complete === true) {
+      setSkeleton(false)
+      setShow(true)
+    }
+  }, [])
+
+  const handleLoad = useCallback(() => {
     setSkeleton(false)
     setShow(true)
-  }
+  }, [])
 
   return (
     <SkeletonWrapper
@@ -29,7 +38,7 @@ const Image = ({
       margin={margin}
     >
       {skeleton && <Skeleton />}
-      <Img onLoad={handleLoad} show={show} alt={alt} {...props} />
+      <Img onLoad={handleLoad} ref={ImgRef} show={show} alt={alt} {...props} />
     </SkeletonWrapper>
   )
 }

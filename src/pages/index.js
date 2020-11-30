@@ -5,29 +5,30 @@ import { Layout } from '../components/Helpers/Layout'
 import Title from '../components/Helpers/Title/Title'
 import { PROJECTS_ALL_GET } from '../endpoints'
 import PropTypes from 'prop-types'
+import logo from '../../public/logo.svg'
 
 const Home = ({ data }) => {
   return (
     <>
       <PageHead
         title="Página Inicial | Web Dev Felipe"
-        description="Página inicial do desenvolvedor Frontend Felipe Gomes. Veja aqui os melhores sites da internet."
+        description="Página inicial do desenvolvedor web Felipe Gomes. Veja aqui os melhores sites da internet construídos com HTML, CSS, JavaScript, React, Next e outras tecnologias de ponta para a criação de sites para a web."
         href="https://webdevfelipe.vercel.app"
-        author="Felipe Gomes | Desenvolvedor React.js"
+        author="Felipe Gomes | Desenvolvedor Web"
         robots="index,follow"
-        ogTitle="Web Dev Felipe | Desenvolvedor React.js"
-        ogDescription="Página inicial do desenvolvedor Frontend Felipe Gomes. Veja aqui os melhores sites da internet."
+        ogTitle="Web Dev Felipe | Desenvolvedor Web"
+        ogDescription="Página inicial do desenvolvedor web Felipe Gomes. Veja aqui os melhores sites da internet construídos com HTML, CSS, JavaScript, React, Next e outras tecnologias de ponta para a criação de sites para a web."
         ogUrl="https://webdevfelipe.vercel.app"
         ogSiteName="Web Dev Felipe"
-        ogImage="https://drive.google.com/file/d/1XAXUrIv03Se4oogcnVtPR7frAn1b79GZ/view?usp=sharing"
+        ogImage={logo}
         ogType="website"
         ogAlt="website logo"
         ogLocole="pt-BR"
-        twitterTitle="Web Dev Felipe | Desenvolvedor React.js"
-        twitterDescription="Página inicial do desenvolvedor Frontend Felipe Gomes. Veja aqui os melhores sites da internet."
+        twitterTitle="Web Dev Felipe | Desenvolvedor Web"
+        twitterDescription="Página inicial do desenvolvedor web Felipe Gomes. Veja aqui os melhores sites da internet construídos com HTML, CSS, JavaScript, React, Next e outras tecnologias de ponta para a criação de sites para a web."
         twitterUrl="https://webdevfelipe.vercel.app"
         twitterCard="summary"
-        twitterImage="https://drive.google.com/file/d/1XAXUrIv03Se4oogcnVtPR7frAn1b79GZ/view?usp=sharing"
+        twitterImage={logo}
         twitterAlt="website logo"
         twitterCreator="@felipevgomes10"
       />

@@ -14,14 +14,16 @@ import ErrorText from '../../components/Helpers/Error/Error'
 import useEmail from '../../hooks/useEmail'
 import PropTypes from 'prop-types'
 import ConfirmationText from '../../components/ConfirmationText/ConfirmationText'
+import logo from '../../../public/logo.svg'
+import Image from '../../components/Helpers/Image/Image'
 
 const Contact = ({ SERVICE_ID, TEMPLATE_ID, USER_ID }) => {
-  const tablet = useMedia('(max-width: 50em)')
   const name = useForm()
   const email = useForm()
   const message = useForm()
   const { error, validation } = useError()
   const { sendEmail, confirmation, sending, warn } = useEmail()
+  const tablet = useMedia('(max-width: 50em)')
 
   const handleSubmit = useCallback(
     async e => {
@@ -66,23 +68,23 @@ const Contact = ({ SERVICE_ID, TEMPLATE_ID, USER_ID }) => {
     <>
       <PageHead
         title="Entre em Contato | Web Dev Felipe"
-        description="Página de contato do desenvolvedor Frontend Felipe Gomes. Entre em contato por aqui."
+        description="Entre em contato com o desenvolvedor web Felipe Gomes. Peça aqui os melhores sites da internet construídos com HTML, CSS, JavaScript, React, Next e outras tecnologias de ponta para a criação de sites para a web."
         href="https://webdevfelipe.vercel.app/contact"
-        author="Felipe Gomes | Desenvolvedor React.js"
+        author="Felipe Gomes | Desenvolvedor Web"
         robots="index,follow"
-        ogTitle="Web Dev Felipe | Contato | Desenvolvedor React.js"
-        ogDescription="Página de contato do desenvolvedor Frontend Felipe Gomes. Entre em contato por aqui."
+        ogTitle="Web Dev Felipe | Contato | Desenvolvedor Web"
+        ogDescription="Entre em contato com o desenvolvedor web Felipe Gomes. Peça aqui os melhores sites da internet construídos com HTML, CSS, JavaScript, React, Next e outras tecnologias de ponta para a criação de sites para a web."
         ogUrl="https://webdevfelipe.vercel.app/contact"
         ogSiteName="Web Dev Felipe"
-        ogImage="https://drive.google.com/file/d/1XAXUrIv03Se4oogcnVtPR7frAn1b79GZ/view?usp=sharing"
+        ogImage={logo}
         ogType="website"
         ogAlt="website logo"
         ogLocole="pt-BR"
-        twitterTitle="Web Dev Felipe | Contato | Desenvolvedor React.js"
-        twitterDescription="Página de contato do desenvolvedor Frontend Felipe Gomes. Entre em contato por aqui."
+        twitterTitle="Web Dev Felipe | Contato | Desenvolvedor Web"
+        twitterDescription="Entre em contato com o desenvolvedor web Felipe Gomes. Peça aqui os melhores sites da internet construídos com HTML, CSS, JavaScript, React, Next e outras tecnologias de ponta para a criação de sites para a web."
         twitterUrl="https://webdevfelipe.vercel.app/contact"
         twitterCard="summary"
-        twitterImage="https://drive.google.com/file/d/1XAXUrIv03Se4oogcnVtPR7frAn1b79GZ/view?usp=sharing"
+        twitterImage={logo}
         twitterAlt="website logo"
         twitterCreator="@felipevgomes10"
       />
@@ -92,12 +94,10 @@ const Contact = ({ SERVICE_ID, TEMPLATE_ID, USER_ID }) => {
         justify={tablet ? 'stretch' : 'center'}
         align={tablet ? 'stretch' : 'center'}
       >
-        {!tablet && <img alt="entrar em contato" src={formLarge} />}
+        {!tablet && <Image alt="entrar em contato" src={formLarge} />}
         <Layout
           as="div"
           flex
-          gridItem
-          justifySelf={tablet ? 'initial' : 'start'}
           justify="center"
           align="center"
           direction="column"

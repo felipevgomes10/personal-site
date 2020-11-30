@@ -4,11 +4,14 @@ export const Footer = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   background: ${props => props.theme.colors.primary};
   width: 100%;
-  height: 6.8rem;
+  height: 9.8rem;
 
-  & p {
+  & p,
+  & span {
+    display: block;
     color: ${props => props.theme.colors.fontOnPrimary};
   }
 `

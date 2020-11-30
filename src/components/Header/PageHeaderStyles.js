@@ -9,7 +9,7 @@ const flex = css`
 export const Header = styled.header`
   ${flex};
   width: 100%;
-  height: 8.8rem;
+  height: 10.8rem;
   background: ${props => props.theme.colors.background};
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
   padding: 1.5rem 5rem;

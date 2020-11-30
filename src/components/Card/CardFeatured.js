@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Arrow from '../../../public/arrow.svg'
 import { Layout } from '../Helpers/Layout'
 import PropTypes from 'prop-types'
+import Image from '../Helpers/Image/Image'
 
 const CardFeatured = ({ projectName, projectDescription, id, src }) => {
   return (
@@ -16,7 +17,7 @@ const CardFeatured = ({ projectName, projectDescription, id, src }) => {
         resetHeight
         minHeight="inherit"
       >
-        <img alt={projectName} src={src} />
+        <Image alt={projectName} src={src} />
         <Layout
           as="div"
           flex

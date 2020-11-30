@@ -27,7 +27,6 @@ export const GlobalStyle = createGlobalStyle`
     background: #FFFFFF;
     line-height: 21px;
     letter-spacing: .5px;
-    max-width: 1800px;
   }
 
   img {

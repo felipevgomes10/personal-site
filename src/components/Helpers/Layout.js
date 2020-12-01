@@ -100,4 +100,18 @@ export const Layout = styled.section`
       grid-template-rows: 250px min-content;
     }
   }
+
+  &.AboutWrapper {
+    width: 50%;
+    padding: 2.5rem 4rem;
+    margin-top: 2.5rem;
+
+    &:nth-child(2n + 1) {
+      background: ${props => props.theme.colors.secondary};
+    }
+
+    @media (max-width: 31.5em) {
+      width: 90%;
+    }
+  }
 `

@@ -19,7 +19,7 @@ const Home = ({ data }) => {
         ogDescription="Página inicial do desenvolvedor web Felipe Gomes. Veja aqui os melhores sites da internet construídos com HTML, CSS, JavaScript, React, Next e outras tecnologias de ponta para a criação de sites para a web."
         ogUrl="https://webdevfelipe.vercel.app"
         ogSiteName="Web Dev Felipe"
-        ogImage="https://webdevfelipe.com/wp-content/uploads/2020/12/logo.jpg"
+        ogImage="https://webdevfelipe.com/wp-content/uploads/2020/12/logo-dark.png"
         ogType="website"
         ogAlt="website logo"
         ogLocole="pt-BR"
@@ -27,7 +27,7 @@ const Home = ({ data }) => {
         twitterDescription="Página inicial do desenvolvedor web Felipe Gomes. Veja aqui os melhores sites da internet construídos com HTML, CSS, JavaScript, React, Next e outras tecnologias de ponta para a criação de sites para a web."
         twitterUrl="https://webdevfelipe.vercel.app"
         twitterCard="summary"
-        twitterImage="https://webdevfelipe.com/wp-content/uploads/2020/12/logo.jpg"
+        twitterImage="https://webdevfelipe.com/wp-content/uploads/2020/12/logo-dark.png"
         twitterAlt="website logo"
         twitterCreator="@felipevgomes10"
       />

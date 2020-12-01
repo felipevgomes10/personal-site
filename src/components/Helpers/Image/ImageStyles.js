@@ -13,6 +13,7 @@ export const SkeletonWrapper = styled.div`
   height: ${({ height }) => height || '100%'};
   width: ${({ width }) => width || '100%'};
   border-radius: ${({ radius }) => radius};
+  border: ${({ border }) => border};
   margin: ${({ margin }) => margin};
   overflow: ${({ overflowHidden }) => overflowHidden && 'hidden'};
 `

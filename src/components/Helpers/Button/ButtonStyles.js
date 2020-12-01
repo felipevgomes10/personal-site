@@ -28,4 +28,21 @@ export const Btn = styled.button`
     background: ${props => props.theme.colors.primaryLight};
     cursor: wait;
   }
+
+  &.ButtonAsLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: ${props => props.theme.colors.fontOnPrimary};
+
+    & svg {
+      margin-left: 5px;
+      fill: currentColor;
+
+      & > * {
+        fill: currentColor;
+        stroke-width: 1.7px;
+      }
+    }
+  }
 `

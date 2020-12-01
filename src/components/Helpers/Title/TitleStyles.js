@@ -11,4 +11,10 @@ export const Text = styled.h1`
   font-weight: 700;
   background: ${props => props.theme.colors.primary};
   color: ${props => props.theme.colors.fontOnPrimary};
+
+  @media (max-width: 31.25em) {
+    text-align: center;
+    line-height: 1.1;
+    height: 8.1rem;
+  }
 `

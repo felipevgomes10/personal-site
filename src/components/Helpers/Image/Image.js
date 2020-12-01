@@ -10,6 +10,7 @@ const Image = ({
   overflowHidden,
   radius,
   margin,
+  border,
   ...props
 }) => {
   const [show, setShow] = useState(false)
@@ -36,6 +37,7 @@ const Image = ({
       overflowHidden={overflowHidden}
       radius={radius}
       margin={margin}
+      border={border}
     >
       {skeleton && <Skeleton />}
       <Img onLoad={handleLoad} ref={ImgRef} show={show} alt={alt} {...props} />
@@ -52,5 +54,6 @@ Image.propTypes = {
   width: PropTypes.string,
   overflowHidden: PropTypes.bool,
   radius: PropTypes.string,
-  margin: PropTypes.string
+  margin: PropTypes.string,
+  border: PropTypes.string
 }

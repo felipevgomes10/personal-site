@@ -42,7 +42,10 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap"
             rel="stylesheet"
           />
-          <link rel="shortcut icon" href="/logo.svg" />
+          <link
+            rel="shortcut icon"
+            href="https://webdevfelipe.com/wp-content/uploads/2020/12/favicon.png"
+          />
         </Head>
         <body>
           <Main />

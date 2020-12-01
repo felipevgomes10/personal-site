@@ -75,7 +75,7 @@ const Contact = ({ SERVICE_ID, TEMPLATE_ID, USER_ID }) => {
         ogDescription="Entre em contato com o desenvolvedor web Felipe Gomes. Peça aqui os melhores sites da internet construídos com HTML, CSS, JavaScript, React, Next e outras tecnologias de ponta para a criação de sites para a web."
         ogUrl="https://webdevfelipe.vercel.app/contact"
         ogSiteName="Web Dev Felipe"
-        ogImage="https://webdevfelipe.com/wp-content/uploads/2020/12/logo.jpg"
+        ogImage="https://webdevfelipe.com/wp-content/uploads/2020/12/logo-dark.png"
         ogType="website"
         ogAlt="website logo"
         ogLocole="pt-BR"
@@ -83,7 +83,7 @@ const Contact = ({ SERVICE_ID, TEMPLATE_ID, USER_ID }) => {
         twitterDescription="Entre em contato com o desenvolvedor web Felipe Gomes. Peça aqui os melhores sites da internet construídos com HTML, CSS, JavaScript, React, Next e outras tecnologias de ponta para a criação de sites para a web."
         twitterUrl="https://webdevfelipe.vercel.app/contact"
         twitterCard="summary"
-        twitterImage="https://webdevfelipe.com/wp-content/uploads/2020/12/logo.jpg"
+        twitterImage="https://webdevfelipe.com/wp-content/uploads/2020/12/logo-dark.png"
         twitterAlt="website logo"
         twitterCreator="@felipevgomes10"
       />

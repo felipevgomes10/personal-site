@@ -12,6 +12,9 @@ import Loader from '../../components/Helpers/Loader/Loader'
 import PageHead from '../../components/Helpers/Head'
 import ProjectDelete from '../../components/Delete/ProjectDelete'
 import Image from '../../components/Helpers/Image/Image'
+import Link from 'next/link'
+import Button from '../../components/Helpers/Button/Button'
+import Arrow from '../../../public/arrow.svg'
 
 const Project = ({ data, login }) => {
   const router = useRouter()
@@ -75,7 +78,7 @@ const Project = ({ data, login }) => {
           justify="center"
           align="center"
           direction="column"
-          padding={mobile ? '5.2rem 5.2rem 12.2rem' : '5.2rem'}
+          padding={mobile && login ? '5.2rem 5.2rem 12.2rem' : '5.2rem'}
           position="relative"
           fromLeft
         >
@@ -100,6 +103,11 @@ const Project = ({ data, login }) => {
               ))}
           </Layout>
           <Iframe src={data.video} />
+          <Link href="/contact" passHref>
+            <Button as="a" className="ButtonAsLink" margin="5.2rem 5.2rem 0">
+              Contato <Arrow />
+            </Button>
+          </Link>
         </Layout>
       </Layout>
     </>

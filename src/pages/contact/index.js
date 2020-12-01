@@ -14,7 +14,6 @@ import ErrorText from '../../components/Helpers/Error/Error'
 import useEmail from '../../hooks/useEmail'
 import PropTypes from 'prop-types'
 import ConfirmationText from '../../components/ConfirmationText/ConfirmationText'
-import logo from '../../../public/logo.svg'
 import Image from '../../components/Helpers/Image/Image'
 
 const Contact = ({ SERVICE_ID, TEMPLATE_ID, USER_ID }) => {
@@ -76,7 +75,7 @@ const Contact = ({ SERVICE_ID, TEMPLATE_ID, USER_ID }) => {
         ogDescription="Entre em contato com o desenvolvedor web Felipe Gomes. Peça aqui os melhores sites da internet construídos com HTML, CSS, JavaScript, React, Next e outras tecnologias de ponta para a criação de sites para a web."
         ogUrl="https://webdevfelipe.vercel.app/contact"
         ogSiteName="Web Dev Felipe"
-        ogImage={logo}
+        ogImage="https://webdevfelipe.com/wp-content/uploads/2020/12/logo.jpg"
         ogType="website"
         ogAlt="website logo"
         ogLocole="pt-BR"
@@ -84,7 +83,7 @@ const Contact = ({ SERVICE_ID, TEMPLATE_ID, USER_ID }) => {
         twitterDescription="Entre em contato com o desenvolvedor web Felipe Gomes. Peça aqui os melhores sites da internet construídos com HTML, CSS, JavaScript, React, Next e outras tecnologias de ponta para a criação de sites para a web."
         twitterUrl="https://webdevfelipe.vercel.app/contact"
         twitterCard="summary"
-        twitterImage={logo}
+        twitterImage="https://webdevfelipe.com/wp-content/uploads/2020/12/logo.jpg"
         twitterAlt="website logo"
         twitterCreator="@felipevgomes10"
       />

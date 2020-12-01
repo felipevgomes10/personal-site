@@ -7,7 +7,6 @@ import Linkedin from '../../../public/linkedin.svg'
 import GitHub from '../../../public/github.svg'
 import PropTypes from 'prop-types'
 import PageHead from '../../components/Helpers/Head'
-import logo from '../../../public/logo.svg'
 
 const About = ({ data }) => {
   return (
@@ -22,7 +21,7 @@ const About = ({ data }) => {
         ogDescription="Sobre do desenvolvedor web Felipe Gomes. Veja aqui os melhores sites da internet construídos com HTML, CSS, JavaScript, React e Next e outras tecnologias de ponta para a criação de sites para a web."
         ogUrl="https://webdevfelipe.vercel.app/about"
         ogSiteName="Web Dev Felipe"
-        ogImage={logo}
+        ogImage="https://webdevfelipe.com/wp-content/uploads/2020/12/logo.jpg"
         ogType="website"
         ogAlt="website logo"
         ogLocole="pt-BR"
@@ -30,7 +29,7 @@ const About = ({ data }) => {
         twitterDescription="Sobre do desenvolvedor web Felipe Gomes. Veja aqui os melhores sites da internet construídos com HTML, CSS, JavaScript, React e Next e outras tecnologias de ponta para a criação de sites para a web."
         twitterUrl="https://webdevfelipe.vercel.app/projects"
         twitterCard="summary"
-        twitterImage={logo}
+        twitterImage="https://webdevfelipe.com/wp-content/uploads/2020/12/logo.jpg"
         twitterAlt="website logo"
         twitterCreator="@felipevgomes10"
       />

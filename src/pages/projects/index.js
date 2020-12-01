@@ -6,7 +6,6 @@ import PropTypes from 'prop-types'
 import Page from '../../components/Helpers/Page'
 import LoadMore from '../../components/Helpers/LoadMore/LoadMore'
 import PageHead from '../../components/Helpers/Head'
-import logo from '../../../public/logo.svg'
 
 const Projects = ({ projectsData, user }) => {
   const [pages, setPages] = useState(2)
@@ -29,7 +28,7 @@ const Projects = ({ projectsData, user }) => {
         ogDescription="Projetos do desenvolvedor web Felipe Gomes. Veja aqui os melhores sites da internet construídos com HTML, CSS, JavaScript, React, Next e outras tecnologias de ponta para a criação de sites para a web."
         ogUrl="https://webdevfelipe.vercel.app/projects"
         ogSiteName="Web Dev Felipe"
-        ogImage={logo}
+        ogImage="https://webdevfelipe.com/wp-content/uploads/2020/12/logo.jpg"
         ogType="website"
         ogAlt="website logo"
         ogLocole="pt-BR"
@@ -37,7 +36,7 @@ const Projects = ({ projectsData, user }) => {
         twitterDescription="Projetos do desenvolvedor web Felipe Gomes. Veja aqui os melhores sites da internet construídos com HTML, CSS, JavaScript, React, Next e outras tecnologias de ponta para a criação de sites para a web."
         twitterUrl="https://webdevfelipe.vercel.app/projects"
         twitterCard="summary"
-        twitterImage={logo}
+        twitterImage="https://webdevfelipe.com/wp-content/uploads/2020/12/logo.jpg"
         twitterAlt="website logo"
         twitterCreator="@felipevgomes10"
       />

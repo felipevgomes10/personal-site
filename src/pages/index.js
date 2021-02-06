@@ -39,7 +39,7 @@ const Home = ({ data }) => {
         margin="2.5rem 0"
         fromLeft
       >
-        <Title text="Projetos em destaques" />
+        <Title text="Projetos em destaque" />
         {data.map(({ id, content, title, src }) => (
           <CardFeatured
             key={id}

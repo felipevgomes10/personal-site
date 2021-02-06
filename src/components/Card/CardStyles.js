@@ -23,6 +23,7 @@ export const CardWrapper = styled.div`
   min-height: 203px;
   background: ${props => props.theme.colors.background};
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid transparent;
   border-radius: 9px;
   padding: ${({ padding }) => padding || '2.5rem'};
   overflow: ${({ overflow }) => overflow};
